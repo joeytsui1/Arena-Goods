@@ -1,6 +1,7 @@
 import React, { useState } from "react"
+import { Redirect } from "react-router-dom"
 import * as sessionActions from "../../store/session"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import "./SignUpFormPage.css"
 
 const SignUpForm = () => {
@@ -10,11 +11,12 @@ const SignUpForm = () => {
     const [first, setFirst] = useState("")
     const [last, setLast] = useState("")
     const [errors, setErrors] = useState([])
+    const currentUser = useSelector(state => state.session.user)
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
-        return dispatch(sessionActions.login({ email, password, first, last }))
+        return dispatch(sessionActions.signup({ email, password, first, last }))
             .catch(async (res) => {
                 let data;
                 try {
@@ -28,7 +30,7 @@ const SignUpForm = () => {
                 else setErrors([res.statusText]);
             });
     }
-    return (
+    return currentUser ? (<Redirect to="/"/>) : (
         <>
         <div className="signup-page">
             <h2 className="signup-header">
