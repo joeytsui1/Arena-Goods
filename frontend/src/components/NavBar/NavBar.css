@@ -7,12 +7,27 @@ header {
     padding-left: 45px;
     padding-right: 45px;
 }
-
+.logo {
+    width: 15%;
+    margin-left: 650px;
+}
 .second-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     min-height: 35px;
     background-color: rgb(239, 239, 239);
 }
 
+.second-nav-p {
+    font-size: small;
+    color: rgb(110, 110, 110);
+}
+
+.user-funcs {
+    width: 25%;
+    padding-left: 200px;
+}
 .nav-login-button  { 
     min-height: 1px;
     color: black;

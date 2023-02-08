@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/session";
 import { useHistory } from "react-router-dom";
+import logoImage from './images/logo.jpg'
 import "./NavBar.css"
 
 const NavBar = () => {
@@ -54,6 +55,7 @@ const NavBar = () => {
                 <div>
                     <button className="home-button" onClick={redirectHome}>Home</button>
                 </div>
+                <div><img className="logo" src={logoImage}/></div>
                 <div className="user-funcs">
                     {searchButton}
                     {currentUser ? logoutButton : loginButton}
@@ -61,7 +63,14 @@ const NavBar = () => {
                 </div>
             </header>
             <nav className="second-nav">
-
+                <p className="second-nav-p">Jordans</p>
+                <p className="second-nav-p">Off-White</p>
+                <p className="second-nav-p">Nikes</p>
+                <p className="second-nav-p">Yeezy</p>
+                <p className="second-nav-p">Adidas</p>
+                <p className="second-nav-p">New Balance</p>
+                <p className="second-nav-p">Asics</p>
+                <p className="second-nav-p">Bape</p>
             </nav>
         </>
     )
