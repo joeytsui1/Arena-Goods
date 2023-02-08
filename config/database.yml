@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: stadium_goods_production
-  username: stadium_goods
-  password: <%= ENV["STADIUM_GOODS_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
