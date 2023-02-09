@@ -31,18 +31,12 @@
 }
 
 .test {
-    margin-top: 150px;
+    margin-top: 200px;
     display: flex;
     flex-direction: column;
     font-size: 18px;
-    height: 100px;
+    height: 30px;
     justify-content: space-around;
-    /* margin: 50px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    border: 1px solid lightgrey;
-    border-radius: 40px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); */
     position: sticky;
     top: 120px;
 }
@@ -57,4 +51,17 @@
 
 .checkout-box > * {
     padding: 15px;
+}
+
+.product-nav {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 100px;
+    width: 35%;
+}
+
+.product-nav > * {
+    padding-right: 10px;
+    padding-left: 10px;
+    border-right: 1px solid gray;
 }

@@ -21,6 +21,11 @@ const ProductShowPage = () => {
         <>
         <div className="product-wrapper">
             <div className="product-div">
+                <nav className="product-nav">
+                    <a>Home</a>
+                    <a>{product.brand}</a>
+                    <p>{product.style} {product.name}</p>
+                </nav>
                 <img className="product-img" src={product.image} alt='product-img'></img>
                 <p className="product-p">{product.description}</p>
             </div>
