@@ -4,6 +4,7 @@ import LoginFormPage from './components/LoginForm';
 import SignUpForm from './components/SignUpFormPage';
 import NavBar from './components/NavBar';
 import IndexPage from './components/IndexPage';
+import ProductShowPage from './components/ProductShowPage';
 import Footer from './components/Footer';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       </Route>
       <Route exact path="/"><IndexPage/></Route>
       <Route path="/signup"><SignUpForm/></Route>
+      <Route path="/products/:productId" component={ProductShowPage}/>
     </Switch>
     <Footer></Footer>
     </>

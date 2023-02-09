@@ -8,6 +8,8 @@ import './index.css';
 import { BrowserRouter } from 'react-router-dom'
 import csrfFetch, { restoreCSRF } from './store/csrf';
 import * as sessionActions from './store/session'
+import * as productActions from './store/product'
+
 
 
 const store = configureStore()
@@ -16,6 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.store = store
   window.csrfFetch = csrfFetch
   window.sessionActions = sessionActions
+  window.productActions = productActions
 }
 
 function Root() {
