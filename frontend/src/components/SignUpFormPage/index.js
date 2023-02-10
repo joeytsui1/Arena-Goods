@@ -30,6 +30,11 @@ const SignUpForm = () => {
                 else setErrors([res.statusText]);
             });
     }
+    const firstNameErrors = errors.find(error => error.includes("First"))
+    const lastNameErrors = errors.find(error => error.includes("Last"))
+    const emailErrors = errors.find(error => error.includes("Email"))
+    const passwordErrors = errors.find(error => error.includes("Password"))
+    console.log(errors)
     return currentUser ? (<Redirect to="/"/>) : (
         <>
         <div className="signup-page">
@@ -47,7 +52,7 @@ const SignUpForm = () => {
                     placeholder="First Name*"
                 />
                 <br></br>
-                <span className='login'>{errors.map(error => <span key={error}>{error}</span>)}</span>
+                <p className='signup-errors'>{firstNameErrors}</p>
                 <input
                     type="text"
                     value={last}
@@ -55,7 +60,7 @@ const SignUpForm = () => {
                     placeholder="Last Name*"
                 />
                 <br></br>
-                <span className='login'>{errors.map(error => <span key={error}>{error}</span>)}</span>
+                <p className='signup-errors'>{lastNameErrors}</p>
                 <input
                     type="text"
                     value={email}
@@ -63,7 +68,7 @@ const SignUpForm = () => {
                     placeholder="Email Address*"
                 />
                 <br></br>
-                <span className='login'>{errors.map(error => <span key={error}>{error}</span>)}</span>
+                <p className='signup-errors'>{emailErrors}</p>
                 <input
                     type="password"
                     value={password}
@@ -71,7 +76,7 @@ const SignUpForm = () => {
                     placeholder="Password*"
                 />
                 <br></br>
-                <span className='login'>{errors.map(error => <span key={error}>{error}</span>)}</span>
+                <p className='signup-errors'>{passwordErrors}</p>
                 {/* <input
                     type="text"
                     // value={firstName}

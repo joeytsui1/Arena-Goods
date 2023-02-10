@@ -31,6 +31,7 @@ function LoginFormPage() {
                 else setErrors([res.statusText]);
             });
     }
+    console.log(errors)
     const errorMessage = errors.map(error => <span key={error}>{error}</span>)
 
     const handleClick = (e) => {
@@ -49,7 +50,6 @@ function LoginFormPage() {
                         onChange={e => { setEmail(e.target.value) }}
                         placeholder="Email Address*"
                     />
-                    <span className='login'>{errorMessage}</span>
                     <br></br>
                     <input
                         className="password-input"
@@ -58,10 +58,12 @@ function LoginFormPage() {
                         onChange={e => { setPassword(e.target.value) }}
                         placeholder="Password*"
                     />
-                    <span className='login'>{errors.map(error => <span key={error}>{error}</span>)}</span>
                     <br></br>
                     <button className="login-button">Login</button>
                     <button className="demo-user-button" onClick={handleClick}>Demo</button>
+                    <br></br>
+                    <br></br>
+                    <p className='login-errors'>{errorMessage}</p>
                 </form>
 
                 <br />

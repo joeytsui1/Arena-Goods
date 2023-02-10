@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 import IndexPage from './components/IndexPage';
 import ProductShowPage from './components/ProductShowPage';
 import Footer from './components/Footer';
+import BrandShowPage from './components/BrandShowPage'
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
       </Route>
       <Route exact path="/"><IndexPage/></Route>
       <Route path="/signup"><SignUpForm/></Route>
-      <Route path="/products/:productId" component={ProductShowPage}/>
+      <Route exact path="/products/:productId" component={ProductShowPage}/>
+      <Route path="/:brand" component={BrandShowPage}/>
     </Switch>
     <Footer></Footer>
     </>

@@ -22,7 +22,7 @@ const ProductShowPage = () => {
         <div className="product-wrapper">
             <div className="product-div">
                 <nav className="product-nav">
-                    <a>Home</a>
+                    <a href="/">Home</a>
                     <a>{product.brand}</a>
                     <p>{product.style} {product.name}</p>
                 </nav>
@@ -33,12 +33,19 @@ const ProductShowPage = () => {
                 <a href="#">{product.brand}</a>
                 <h1>{product.style}</h1>
                 <span>"{product.name}"</span>
-                <span>$3410</span>
+                <span>Size {product.size}</span>
+                <span>${product.price}</span>
                 <div className="checkout-box">
-                    <h1>this is the size dropdown option</h1>
-                    <h1>this is the button for choosing sizes and dropdown</h1>
-                    <h1>this is the add to cart button</h1>
+                    <p>US Men sizes displayed </p>
+                    <button className="size-option">Select Size</button>
+                    <button className="add-to-cart">Add to cart</button>
                 </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>Manufactured SKU</p>
+                <p>{product.sku}</p>
             </div>
         </div>
         </>

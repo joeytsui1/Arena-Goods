@@ -110,6 +110,8 @@ body{
     margin-right: 10px;
     margin-left: 10px;
 }
-.a:active {
-    color: black;
+
+
+.login-errors {
+    color: red;
 }

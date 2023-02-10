@@ -27,7 +27,7 @@ const NavBar = () => {
     )
 
     const loginButton = (
-        <svg className="nav-login-button" onClick={redirectLogin}>
+        <svg className="nav-login-button" onClick={currentUser ? handleClick : redirectLogin}>
             <path d="M18.975 18.8699C18.975 16.7411 18.3443 14.0867 13.456 12.2733C12.6938 12.0105 12.1945 11.2746 12.1945 10.4862V9.5138C13.1406 8.72536 13.6925 7.54271 13.6925 6.30749V4.20499C13.6925 1.89225 11.8003 0 9.48752 0C7.17477 0 5.28252 1.89225 5.28252 4.20499V6.30749C5.28252 7.54271 5.83443 8.72536 6.78055 9.5138V10.5125C6.78055 11.3009 6.28121 12.0105 5.51905 12.2996C2.9435 13.2457 0 14.8489 0 18.8962C0 19.5007 0.499343 20 1.10381 20H17.8449C18.502 19.9737 18.975 19.4744 18.975 18.8699ZM1.10381 18.8699C1.10381 16.1629 2.49672 14.5335 5.93955 13.272C7.09593 12.8515 7.88436 11.7214 7.88436 10.5125V9.01445L7.67411 8.85677C6.83312 8.2523 6.36005 7.30618 6.36005 6.30749V4.20499C6.36005 2.47043 7.77924 1.05125 9.5138 1.05125C11.2484 1.05125 12.6675 2.47043 12.6675 4.20499V6.30749C12.6675 7.30618 12.1945 8.2523 11.3798 8.85677L11.1695 9.01445V10.5125C11.1695 11.7477 11.958 12.8515 13.1143 13.272C16.5309 14.5335 17.9501 16.1629 17.9501 18.8699C17.9501 18.8962 17.9238 18.9225 17.8975 18.9225H1.13009C1.10381 18.9225 1.10381 18.8962 1.10381 18.8699Z" fill="currentColor"></path>
         </svg>
 
@@ -52,13 +52,14 @@ const NavBar = () => {
     return (
         <>
             <header >
-                <div>
+                {/* <div>
                     <button className="home-button" onClick={redirectHome}>Home</button>
-                </div>
-                <div><img className="logo" src={logoImage}/></div>
+                </div> */}
+                <div className="logo-div" onClick={redirectHome}><img className="logo" src={logoImage}/></div>
                 <div className="user-funcs">
+                    {/* {currentUser ? <p>{currentUser.first}</p> : null} */}
                     {searchButton}
-                    {currentUser ? logoutButton : loginButton}
+                    {loginButton}
                     {cartButton}
                 </div>
             </header>

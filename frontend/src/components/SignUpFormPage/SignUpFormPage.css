@@ -26,8 +26,13 @@ input {
     line-height: 1;
     letter-spacing: 0.08 rem;
     padding: 6px;
-    margin-bottom: 25px;
     position: relative;
+    margin-bottom: 10px;
+}
+
+.signup-errors{
+    color: red;
+    margin-bottom: 15px;
 }
 
 
