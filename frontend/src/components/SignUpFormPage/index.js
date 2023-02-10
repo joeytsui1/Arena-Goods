@@ -77,12 +77,6 @@ const SignUpForm = () => {
                 />
                 <br></br>
                 <p className='signup-errors'>{passwordErrors}</p>
-                {/* <input
-                    type="text"
-                    // value={firstName}
-                    // onChange={e => { setFirstName(e.target.value) }}
-                    placeholder="Confirm Password*"
-                /> */}
                 <br></br>
                 <div>
                     <p className="policy">By clicking "Register", you agree to our <a href="#">Terms and condition</a> and <a href="#">Privacy Policy</a>

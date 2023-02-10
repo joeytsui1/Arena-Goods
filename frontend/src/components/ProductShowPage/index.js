@@ -33,7 +33,6 @@ const ProductShowPage = () => {
                 <a href="#">{product.brand}</a>
                 <h1>{product.style}</h1>
                 <span>"{product.name}"</span>
-                <span>Size {product.size}</span>
                 <span>${product.price}</span>
                 <div className="checkout-box">
                     <p>US Men sizes displayed </p>

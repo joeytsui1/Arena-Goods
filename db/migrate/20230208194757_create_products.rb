@@ -6,7 +6,6 @@ class CreateProducts < ActiveRecord::Migration[7.0]
       t.string :brand, null: false, index: true
       t.string :sku, null: false
       t.text :description
-      t.integer :size, null: false
       t.integer :price, null: false
       t.integer :quantity, null: false
 

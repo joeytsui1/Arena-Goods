@@ -1,7 +1,7 @@
 .product-wrapper{
     display: flex;
     justify-content: center ;
-    padding-bottom: 100px;
+    padding-bottom: 300px;
 }
 
 .product-img {
@@ -54,6 +54,7 @@
     justify-content: center;
     border: 1px solid lightgray;
     width: 100%;
+    margin-top: 20px;
 }
 
 .checkout-box > * {
