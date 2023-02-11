@@ -19,6 +19,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_08_194757) do
     t.string "style", null: false
     t.string "brand", null: false
     t.string "sku", null: false
+    t.string "gender", null: false
+    t.string "released_date"
     t.text "description"
     t.integer "price", null: false
     t.string "image"
