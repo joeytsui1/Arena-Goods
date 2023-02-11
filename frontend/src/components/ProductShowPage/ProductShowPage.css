@@ -64,12 +64,13 @@
 .product-nav {
     display: flex;
     justify-content: space-evenly;
-    width: 600px;
+    width: 700px;
     margin-left: 200px;
 }
 
 .product-nav > * {
     padding-right: 50px;
+    padding-left: 50px;
 }
 
 .product-nav :nth-child(-n+2) {

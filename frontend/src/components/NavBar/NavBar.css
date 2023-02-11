@@ -27,15 +27,20 @@ header {
 }
 
 .second-nav-p {
-    font-size: small;
+    font-size: x-small;
     color: rgb(110, 110, 110);
+    text-decoration: none;
 }
 
 .user-funcs {
-    position: relative;
+    display: flex;
+    justify-content: flex-end;
     width: 25%;
-    padding-left: 300px;
-    overflow: hidden;
+}
+.user-funcs > p {
+    padding-right: 15px;
+    padding-top: 3px;
+    font-size: small;
 }
 .nav-login-button  { 
     min-height: 1px;

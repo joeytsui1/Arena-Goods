@@ -8,20 +8,20 @@ import ProductIndex from './components/ProductIndex';
 import ProductShowPage from './components/ProductShowPage';
 import Footer from './components/Footer';
 import BrandShowPage from './components/BrandShowPage'
+import ErrorPage from './components/ErrorPage';
 
 function App() {
   return (
     <>
     <NavBar></NavBar>
     <Switch>
-      <Route path="/login">
-        <LoginFormPage />
-      </Route>
-      <Route exact path="/"><IndexPage/></Route>
+      <Route path="/login"><LoginFormPage /></Route>
       <Route path="/signup"><SignUpForm/></Route>
-      <Route exact path="/products"><ProductIndex/></Route>
-      <Route exact path="/products/:productId" component={ProductShowPage}/>
-      <Route path="/brand" component={BrandShowPage}/>
+      <Route exact path="/products"><ProductIndex /></Route>
+      <Route path="/products/:productId" component={ProductShowPage} />
+      <Route path="/brands/:brand" component={BrandShowPage} />
+      <Route exact path="/"><IndexPage /></Route>
+      <Route path="*" component={ErrorPage} />
     </Switch>
     <Footer></Footer>
     </>

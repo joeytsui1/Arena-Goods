@@ -1,0 +1,41 @@
+.brand-info-img{
+    /* width: 72%; */
+    width: 1130px;
+}
+
+.brand-info-p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.brand-inner-div{
+    position: absolute;
+    top: 235px;
+    left: 180px;
+    border: 1px solid white;
+    background-color: white;
+    height: 225px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.brand-inner-div > * {
+    font-size: medium;
+    padding-right: 20px;
+    color: rgb(110, 110, 110);
+}
+.brand-div{
+    display: flex;
+    justify-content:flex-end;
+    margin-right: 150px;
+    margin-top: 60px;
+}
+
+.brand-div-h1{
+    color: black;
+    font-size: x-large;
+    font-weight: 100;
+}

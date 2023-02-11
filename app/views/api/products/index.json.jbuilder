@@ -5,6 +5,7 @@
         json.brand product.brand
         json.image product.image
         json.style product.style
+        json.price product.price
         # json.images product.images
     end
 end

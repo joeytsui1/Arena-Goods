@@ -52,27 +52,26 @@ const NavBar = () => {
     return (
         <>
             <header >
-                {/* <div>
-                    <button className="home-button" onClick={redirectHome}>Home</button>
-                </div> */}
-                <div className="logo-div" onClick={redirectHome}><img className="logo" src={logoImage}/></div>
+
+                <div className="logo-div"><img className="logo" src={logoImage} onClick={redirectHome}  /></div>
                 <div className="user-funcs">
-                    {/* {currentUser ? <p>{currentUser.first}</p> : null} */}
+                    <p>Github</p>
+                    <p>Linkedin</p>
+                    <p>AngelLink</p>
+                    <p>|</p>
                     {searchButton}
                     {loginButton}
                     {cartButton}
                 </div>
             </header>
             <nav className="second-nav">
-                <p className="second-nav-p">Jordans</p>
-                <p className="second-nav-p">Off-White</p>
-                <p className="second-nav-p">Nikes</p>
-                <p className="second-nav-p">Yeezy</p>
-                <p className="second-nav-p">Adidas</p>
-                <p className="second-nav-p">New Balance</p>
-                <p className="second-nav-p">Asics</p>
-                <p className="second-nav-p">Bape</p>
-                <a className="second-nav-p" href="/products">All Brands</a>
+                <a className="second-nav-p" href="/brands/jordan">JORDAN</a>
+                <a className="second-nav-p" href="/brands/nike">NIKE</a>
+                <a className="second-nav-p" href="/brands/adidas">ADIDAS</a>
+                <a className="second-nav-p" href="/brands/new-balance">NEW BALANCE</a>
+                <a className="second-nav-p" href="/brands/asics">ASICS</a>
+                <a className="second-nav-p" href="/brands/bape">BAPE</a>
+                <a className="second-nav-p" href="/products">ALL BRANDS</a>
             </nav>
         </>
     )

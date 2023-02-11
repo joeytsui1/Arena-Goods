@@ -7,12 +7,15 @@ const ProductIndexItem = (prop) => {
     }
 
     return(
-        <div onClick={handleClick} className="each-product-item">
-            <img className="each-product-img" src={prop.product.image}/>
-            <p className='each-product-brand'>{prop.product.brand}</p>
-            <p>{prop.product.style}</p>
-            <p>"{prop.product.name}"</p>
-        </div>
+        <>
+            <div onClick={handleClick} className="each-product-item">
+                <img className="each-product-img" src={prop.product.image}/>
+                <p className='each-product-brand'>{prop.product.brand}</p>
+                <p>{prop.product.style}</p>
+                <p>"{prop.product.name}"</p>
+                <p>${prop.product.price}</p>
+            </div>
+        </>
     )
 }
 
