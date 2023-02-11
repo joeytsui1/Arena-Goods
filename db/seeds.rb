@@ -52,104 +52,102 @@ ApplicationRecord.transaction do
 # product1.attach(product1_image)
 
 
-  Product.create!(
-    name: "Dior",
-    style: "AIR JORDAN 1 HIGH OG",
-    brand: "JORDAN",
-    sku: "CN8607 002",
-    description: "The Dior x Air Jordan 1 High is arguably the most desirable sneaker collaboration of 2020. Produced in Italy in extremely limited quantities, Dior’s first ever collaboration with Jordan Brand featured a multilayered release rollout that only stoked demand for one of the most sought after Jordan 1s in recent history. Employing a minimal appearance that parallels the original “White/Grey” Jordan 1 from 1985, the Dior variation features supple Dior grey leather overlays on the forefoot, eyelets, collar, and heel. White leather dots the mid-panel and perforated toe. An embroidered monogram Swoosh appears on either side and an “Air Dior” Wings logo can be found on the collar. A white rubber midsole and icy blue translucent outsole tie together the look of the understated Dior x Air Jordan 1. The Dior x Air Jordan 1 High was released on June 25, 2020.",
-    price: 10499,
-    gender: "Mens",
-    released_date: "June 25, 2020",
-    image: "https://img.stadiumgoods.com/15/62/45/04/15624504_43103426_2048.jpg"
-  )
+  # Product.create!(
+  #   name: "Dior",
+  #   style: "AIR JORDAN 1 HIGH OG",
+  #   brand: "JORDAN",
+  #   sku: "CN8607 002",
+  #   description: "The Dior x Air Jordan 1 High is arguably the most desirable sneaker collaboration of 2020. Produced in Italy in extremely limited quantities, Dior’s first ever collaboration with Jordan Brand featured a multilayered release rollout that only stoked demand for one of the most sought after Jordan 1s in recent history. Employing a minimal appearance that parallels the original “White/Grey” Jordan 1 from 1985, the Dior variation features supple Dior grey leather overlays on the forefoot, eyelets, collar, and heel. White leather dots the mid-panel and perforated toe. An embroidered monogram Swoosh appears on either side and an “Air Dior” Wings logo can be found on the collar. A white rubber midsole and icy blue translucent outsole tie together the look of the understated Dior x Air Jordan 1. The Dior x Air Jordan 1 High was released on June 25, 2020.",
+  #   price: 10499,
+  #   gender: "Mens",
+  #   released_date: "June 25, 2020",
+  #   image: "https://img.stadiumgoods.com/15/62/45/04/15624504_43103426_2048.jpg"
+  # )
 
-  Product.create!(
-    name: "True Blue",
-    style: "AIR JORDAN 1 HIGH OG",
-    brand: "JORDAN",
-    sku: "CN8607 002",
-    description: "The Air Jordan 1 High OG “True Blue” is a colorway of the classic high-top sneaker that draws favorably from an original Air Jordan colorway. The shoe in question is the Air Jordan 3’s original “True Blue” colorway that debuted in 1988. While the shoes share a nickname, they differ from each other in design.",
-    price: 200,
-    gender: "Mens",
-    released_date: "January 14, 2023",
-    image: "https://img.stadiumgoods.com/19/51/74/53/19517453_43461021_2048.jpg",
-  )
+  # Product.create!(
+  #   name: "True Blue",
+  #   style: "AIR JORDAN 1 HIGH OG",
+  #   brand: "JORDAN",
+  #   sku: "CN8607 002",
+  #   description: "The Air Jordan 1 High OG “True Blue” is a colorway of the classic high-top sneaker that draws favorably from an original Air Jordan colorway. The shoe in question is the Air Jordan 3’s original “True Blue” colorway that debuted in 1988. While the shoes share a nickname, they differ from each other in design.",
+  #   price: 200,
+  #   gender: "Mens",
+  #   released_date: "January 14, 2023",
+  #   image: "https://img.stadiumgoods.com/19/51/74/53/19517453_43461021_2048.jpg",
+  # )
 
-  Product.create!(
-    name: "Off-White - Chicago",
-    style: "AIR JORDAN 1",
-    brand: "JORDAN",
-    sku: "AA3834 101",
-    description: "The verdict is in: The OFF-WHITE x Air Jordan 1 by Virgil Abloh is the sneaker of the year for 2017. The shoe absolutely everybody wants but few can get, the sneaker world has not seen a force like the Virgil Abloh Air Jordan 1 from “THE TEN” collection in a long time, if ever. Based off the original “Chicago” Air Jordan 1, the shoe features details that coincide with the rest of the ten models by Abloh like exposed foam, stitched on Swooshes, and the signature red zip tie. Sure to go down as one of the most hyped and coveted sneakers of all time, grab your piece of sneaker history now before they’re all gone.",
-    price: 7875,
-    gender: "Mens",
-    released_date: "September 1, 2017",
-    image: "https://img.stadiumgoods.com/12/95/99/19/12959919_43160183_2048.jpg"
-  )
+  # Product.create!(
+  #   name: "Off-White - Chicago",
+  #   style: "AIR JORDAN 1",
+  #   brand: "JORDAN",
+  #   sku: "AA3834 101",
+  #   description: "The verdict is in: The OFF-WHITE x Air Jordan 1 by Virgil Abloh is the sneaker of the year for 2017. The shoe absolutely everybody wants but few can get, the sneaker world has not seen a force like the Virgil Abloh Air Jordan 1 from “THE TEN” collection in a long time, if ever. Based off the original “Chicago” Air Jordan 1, the shoe features details that coincide with the rest of the ten models by Abloh like exposed foam, stitched on Swooshes, and the signature red zip tie. Sure to go down as one of the most hyped and coveted sneakers of all time, grab your piece of sneaker history now before they’re all gone.",
+  #   price: 7875,
+  #   gender: "Mens",
+  #   released_date: "September 1, 2017",
+  #   image: "https://img.stadiumgoods.com/12/95/99/19/12959919_43160183_2048.jpg"
+  # )
 
-  Product.create!(
-    name: "Chicago Lost and Found",
-    style: "AIR JORDAN 1 RETRO HIGH OG",
-    brand: "JORDAN",
-    sku: "DZ5485 612",
-    description: "The Air Jordan 1 High “Lost and Found” is the highly anticipated re-release of the original colorway of Michael Jordan’s signature shoe that draws inspiration from the model’s 1985 release. The “Lost and Found” replicates the look and feel of the debut version of the “Chicago” from the ‘80s.",
-    price: 420,
-    gender: "Mens",
-    released_date: "November 19, 2022",
-    image: "https://img.stadiumgoods.com/18/31/64/89/18316489_43163993_2048.jpg"
-  )
+  # Product.create!(
+  #   name: "Chicago Lost and Found",
+  #   style: "AIR JORDAN 1 RETRO HIGH OG",
+  #   brand: "JORDAN",
+  #   sku: "DZ5485 612",
+  #   description: "The Air Jordan 1 High “Lost and Found” is the highly anticipated re-release of the original colorway of Michael Jordan’s signature shoe that draws inspiration from the model’s 1985 release. The “Lost and Found” replicates the look and feel of the debut version of the “Chicago” from the ‘80s.",
+  #   price: 420,
+  #   gender: "Mens",
+  #   released_date: "November 19, 2022",
+  #   image: "https://img.stadiumgoods.com/18/31/64/89/18316489_43163993_2048.jpg"
+  # )
 
-  Product.create!(
-    name: "Bred Toes",
-    style: "JORDAN 1 RETRO HIGH",
-    brand: "JORDAN",
-    sku: "555088 610",
-    description: "The adidas Yeezy Boost 350 “Turtledove” is the debut colorway of the modern classic, game-changing silhouette by Kanye West. The inaugural colorway features a Primeknit upper in black and cream white tones with a white rubber midsole that wraps around full-length Boost foam cushioning. The heel tab includes a red stripe to complete the clean look. Released in 2015 in very limited quantities, the 350 Boost “Turtledove” has become one of the rarest and most valuable models of the world famous and highly coveted sneaker line by West and adidas.",
-    price: 499,
-    gender: "Mens",
-    released_date: "February 23, 2018",
-    image: "https://img.stadiumgoods.com/13/15/75/30/13157530_43154839_2048.jpg"
-  )
+  # Product.create!(
+  #   name: "Bred Toes",
+  #   style: "JORDAN 1 RETRO HIGH",
+  #   brand: "JORDAN",
+  #   sku: "555088 610",
+  #   description: "The adidas Yeezy Boost 350 “Turtledove” is the debut colorway of the modern classic, game-changing silhouette by Kanye West. The inaugural colorway features a Primeknit upper in black and cream white tones with a white rubber midsole that wraps around full-length Boost foam cushioning. The heel tab includes a red stripe to complete the clean look. Released in 2015 in very limited quantities, the 350 Boost “Turtledove” has become one of the rarest and most valuable models of the world famous and highly coveted sneaker line by West and adidas.",
+  #   price: 499,
+  #   gender: "Mens",
+  #   released_date: "February 23, 2018",
+  #   image: "https://img.stadiumgoods.com/13/15/75/30/13157530_43154839_2048.jpg"
+  # )
 
-  Product.create!(
-    name: "Banned / Bred",
-    style: "AIR JORDAN 1 RETRO HIGH OG",
-    brand: "JORDAN",
-    sku: "555088 001",
-    description: "The Air Jordan 1 High in the iconic black and red colorway returned once again in 2016 as part of the “Banned” campaign celebrating the history of the shoe. The legendary silhouette is presented in its OG iteration featuring an accurate shape and materials to compare to its original release. Simply put, the Air Jordan 1 Bred is an essential piece of any sneaker collection.",
-    price: 539,
-    gender: "Mens",
-    released_date: "September 3, 2016",
-    image: "https://img.stadiumgoods.com/11/70/77/94/11707794_42958046_2048.jpg",
-  )
+  # Product.create!(
+  #   name: "Banned / Bred",
+  #   style: "AIR JORDAN 1 RETRO HIGH OG",
+  #   brand: "JORDAN",
+  #   sku: "555088 001",
+  #   description: "The Air Jordan 1 High in the iconic black and red colorway returned once again in 2016 as part of the “Banned” campaign celebrating the history of the shoe. The legendary silhouette is presented in its OG iteration featuring an accurate shape and materials to compare to its original release. Simply put, the Air Jordan 1 Bred is an essential piece of any sneaker collection.",
+  #   price: 539,
+  #   gender: "Mens",
+  #   released_date: "September 3, 2016",
+  #   image: "https://img.stadiumgoods.com/11/70/77/94/11707794_42958046_2048.jpg",
+  # )
 
 
-  Product.create!(
-    name: "Turtle Dove",
-    style: "YEEZY BOOST 350",
-    brand: "ADIDAS YEEZY",
-    sku: "AQ4832",
-    description: "The adidas Yeezy Boost 350 “Turtledove” is the debut colorway of the modern classic, game-changing silhouette by Kanye West. The inaugural colorway features a Primeknit upper in black and cream white tones with a white rubber midsole that wraps around full-length Boost foam cushioning. The heel tab includes a red stripe to complete the clean look. Released in 2015 in very limited quantities, the 350 Boost “Turtledove” has become one of the rarest and most valuable models of the world famous and highly coveted sneaker line by West and adidas.",
-    price: 359,
-    gender: "Mens",
-    released_date: "June 27, 2015",
-    image: "https://img.stadiumgoods.com/12/96/37/19/12963719_42945637_2048.jpg"
-  )
+  # Product.create!(
+  #   name: "Turtle Dove",
+  #   style: "YEEZY BOOST 350",
+  #   brand: "ADIDAS YEEZY",
+  #   sku: "AQ4832",
+  #   description: "The adidas Yeezy Boost 350 “Turtledove” is the debut colorway of the modern classic, game-changing silhouette by Kanye West. The inaugural colorway features a Primeknit upper in black and cream white tones with a white rubber midsole that wraps around full-length Boost foam cushioning. The heel tab includes a red stripe to complete the clean look. Released in 2015 in very limited quantities, the 350 Boost “Turtledove” has become one of the rarest and most valuable models of the world famous and highly coveted sneaker line by West and adidas.",
+  #   price: 359,
+  #   gender: "Mens",
+  #   released_date: "June 27, 2015",
+  #   image: "https://img.stadiumgoods.com/12/96/37/19/12963719_42945637_2048.jpg"
+  # )
 
-  Product.create!(
-    name: "Kith Salmon Toe",
-    style: "GEL-LYTE 5",
-    brand: "ASICS",
-    sku: "1201A542 700",
-    description: "The Kith x Asics Gel-Lyte 5 “Salmon Toe” is a collaboration between Ronnie Fieg’s sneaker boutique and Asics that celebrates the former’s 10-year anniversary. The Kith x Asics Gel-Lyte 5 “Salmon Toe” is inspired by Kith and Asics’ Gel-Lyte 3 of the same nickname that was originally released in the early 2010s. The modern “Salmon Toe” features the same color block as its predecessor. Specifically, the perforated toe and forefoot overlays are designed in pink pigskin suede. The rest of the upper, including the eyelets, mid-panel, heel, and overlays, appear in navy pigskin suede. The white synthetic leather side stripes are accented with pink. A special “KXTH” logo denoting the shop’s anniversary appears on the heel while mismatched Asics and Fieg branding can be found on the left and right tongue, respectively. The shoe rides on a white foam midsole with Asics’ GEL cushioning technology in the heel.",
-    price: 115,
-    gender: "Mens",
-    released_date: "November 26, 2021",
-    image: "https://img.stadiumgoods.com/17/84/10/01/17841001_43084405_2048.jpg"
-  )
-  
-
+  # Product.create!(
+  #   name: "Kith Salmon Toe",
+  #   style: "GEL-LYTE 5",
+  #   brand: "ASICS",
+  #   sku: "1201A542 700",
+  #   description: "The Kith x Asics Gel-Lyte 5 “Salmon Toe” is a collaboration between Ronnie Fieg’s sneaker boutique and Asics that celebrates the former’s 10-year anniversary. The Kith x Asics Gel-Lyte 5 “Salmon Toe” is inspired by Kith and Asics’ Gel-Lyte 3 of the same nickname that was originally released in the early 2010s. The modern “Salmon Toe” features the same color block as its predecessor. Specifically, the perforated toe and forefoot overlays are designed in pink pigskin suede. The rest of the upper, including the eyelets, mid-panel, heel, and overlays, appear in navy pigskin suede. The white synthetic leather side stripes are accented with pink. A special “KXTH” logo denoting the shop’s anniversary appears on the heel while mismatched Asics and Fieg branding can be found on the left and right tongue, respectively. The shoe rides on a white foam midsole with Asics’ GEL cushioning technology in the heel.",
+  #   price: 115,
+  #   gender: "Mens",
+  #   released_date: "November 26, 2021",
+  #   image: "https://img.stadiumgoods.com/17/84/10/01/17841001_43084405_2048.jpg"
+  # )
 
   puts "Done!"
 end
