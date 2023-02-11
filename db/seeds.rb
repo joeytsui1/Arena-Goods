@@ -117,7 +117,7 @@ ApplicationRecord.transaction do
     style: "AIR JORDAN 1 RETRO HIGH OG",
     brand: "JORDAN",
     sku: "555088 001",
-    description: "The Air Jordan 1 High in the iconic black and red colorway returned once again in 2016 as part of the “Banned” campaign celebrating the history of the shoe. The legendary silhouette is presented in its "OG" iteration featuring an accurate shape and materials to compare to its original release. Simply put, the Air Jordan 1 "Bred" is an essential piece of any sneaker collection.",
+    description: "The Air Jordan 1 High in the iconic black and red colorway returned once again in 2016 as part of the “Banned” campaign celebrating the history of the shoe. The legendary silhouette is presented in its OG iteration featuring an accurate shape and materials to compare to its original release. Simply put, the Air Jordan 1 Bred is an essential piece of any sneaker collection.",
     price: 539,
     gender: "Mens",
     released_date: "September 3, 2016",
