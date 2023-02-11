@@ -15,7 +15,7 @@
 #  image       :string
 #
 class Product < ApplicationRecord
-    validates :name, :style, :brand, :sku, :gender, :price, presence: true
+    validates :name, :style, :brand, :sku, :price, presence: true
 
     # has_many_attached :images
 end
