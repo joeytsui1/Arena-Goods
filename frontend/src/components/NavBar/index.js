@@ -70,7 +70,9 @@ const NavBar = () => {
                 <a className="second-nav-p" href="/brands/adidas">ADIDAS</a>
                 <a className="second-nav-p" href="/brands/new-balance">NEW BALANCE</a>
                 <a className="second-nav-p" href="/brands/asics">ASICS</a>
-                <a className="second-nav-p" href="/brands/bape">BAPE</a>
+                <a className="second-nav-p" href="#">GITHUB</a>
+                <a className="second-nav-p" href="#">LINKEDIN</a>
+                <a className="second-nav-p" href="#">ANGELINK</a>
                 <a className="second-nav-p" href="/products">ALL BRANDS</a>
             </nav>
         </>

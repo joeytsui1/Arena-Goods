@@ -14,7 +14,7 @@ const receiveProducts = (products) => ({
 })
 
 export const getProducts = () => async dispatch => {
-    const res = await csrfFetch("/api/products")
+    const res = await csrfFetch(`/api/products`)
     const data = await res.json()
     dispatch(receiveProducts(data))
 }

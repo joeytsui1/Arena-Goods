@@ -20,7 +20,7 @@ const ProductIndex = () => {
 
 
     const productDiv = products.map(product => <ProductIndexItem key={product.id} product={product}/>)
-
+    const result = productDiv.length
     return (
         <>
             <div className="brand-div">
@@ -30,6 +30,7 @@ const ProductIndex = () => {
                 </div>
                 <img className="brand-info-img" src='https://www.stadiumgoods.com/BWStaticContent/54000/8fa05938-1b3f-499d-a262-b1c5d6f3888b_sg-plpheader-2000x680-update.jpg' />
             </div>
+            <div className="result"><h1>Results ({result})</h1></div>
             <div className="index-product-div">
                 {productDiv}
             </div>

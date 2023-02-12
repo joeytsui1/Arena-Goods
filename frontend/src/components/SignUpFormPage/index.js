@@ -76,7 +76,7 @@ const SignUpForm = () => {
                     placeholder="Password*"
                 />
                 <br></br>
-                <p className='signup-errors'>{passwordErrors}</p>
+                <p className='signup-errors'>{passwordErrors}</p> 
                 <br></br>
                 <div>
                     <p className="policy">By clicking "Register", you agree to our <a href="#">Terms and condition</a> and <a href="#">Privacy Policy</a>

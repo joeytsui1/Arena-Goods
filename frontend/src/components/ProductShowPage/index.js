@@ -28,7 +28,7 @@ const ProductShowPage = () => {
                 <nav className="product-nav">
                     <a href="/">Home</a>
                     <a href={`/brands/${product.brand.toLowerCase()}`}>{product.brand}</a>
-                    <p>{product.style} {product.name}</p>
+                    <p className="shoe-name">{product.style} {product.name}</p>
                 </nav>
                 <img className="product-img" src={product.image} alt='product-img'></img>
                 <p className="product-p">{product.description}</p>

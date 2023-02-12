@@ -11,7 +11,8 @@ function LoginFormPage() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [errors, setErrors] = useState([])
-
+    const [validEmailError, setValidEmailError] = useState('');
+    const [validPasswordError, setValidPasswordError] = useState("")
     if (sessionUser) return <Redirect to="/" />;
 
     const handleSubmit = (e) => {
@@ -21,17 +22,26 @@ function LoginFormPage() {
             .catch(async (res) => {
                 let data;
                 try {
-                    // .clone() essentially allows you to read the response body twice
                     data = await res.clone().json();
                 } catch {
-                    data = await res.text(); // Will hit this case if the server is down
+                    data = await res.text(); 
                 }
                 if (data?.errors) setErrors(data.errors);
                 else if (data) setErrors([data]);
                 else setErrors([res.statusText]);
             });
     }
-    console.log(errors)
+
+    const isValidEmail = (email) => {
+        return email.match(
+            /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        )
+    }
+
+    const isValidPassword = (password) => {
+        return password.length >= 6
+    }
+
     const errorMessage = errors.map(error => <span key={error}>{error}</span>)
 
     const handleClick = (e) => {
@@ -47,17 +57,21 @@ function LoginFormPage() {
                         className="email-input"
                         type="text"
                         value={email}
-                        onChange={e => { setEmail(e.target.value) }}
+                        onChange={e => { setEmail(e.target.value);
+                            setValidEmailError(!isValidEmail(e.target.value) ? 'Please Enter a Valid Email Address' : ''); }}
                         placeholder="Email Address*"
-                    />
+                    /> 
+                    <p className='login-errors'>{validEmailError}</p>
                     <br></br>
                     <input
                         className="password-input"
                         type="password"
                         value={password}
-                        onChange={e => { setPassword(e.target.value) }}
+                        onChange={e => { setPassword(e.target.value);
+                            setValidPasswordError(!isValidPassword(e.target.value) ? "Password must be at least 6 characters long" : "")}}
                         placeholder="Password*"
                     />
+                    <p className='login-errors'>{validPasswordError}</p>
                     <br></br>
                     <button className="login-button">Login</button>
                     <button className="demo-user-button" onClick={handleClick}>Demo</button>

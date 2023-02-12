@@ -3,7 +3,6 @@ import { Redirect, useParams } from "react-router-dom"
 import { useEffect } from "react"
 import { getProducts } from "../../store/product"
 import ProductIndexItem from "../ProductIndexItem"
-import ErrorPage from "../ErrorPage"
 import "./BrandShowPage.css"
 
 const BrandShowPage = () => {
@@ -41,7 +40,7 @@ const BrandShowPage = () => {
 
     const filtered = products.filter(product => product.brand.toLowerCase().includes(brand))
     const productDiv = filtered.map(product => <ProductIndexItem key={product.id} product={product} />)
-
+    const result = productDiv.length
     if (products === undefined) {
         return (
             <>still loading...</>
@@ -58,6 +57,7 @@ const BrandShowPage = () => {
                 </div>
                 {image}
             </div>
+            <div className="result"><h1>Results ({result})</h1></div>
             <div className="index-product-div">
                 {productDiv}
             </div>

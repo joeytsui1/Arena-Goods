@@ -66,6 +66,8 @@ p {
     font-weight: 100;
     background-color: transparent;
     color: black;
+    letter-spacing: 1px;
+    line-height: 20px;
 }
 
 .signup-login-link {

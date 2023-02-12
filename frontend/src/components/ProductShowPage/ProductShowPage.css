@@ -5,7 +5,7 @@
 }
 
 .product-img {
-    width: 900px;
+    width: 1000px;
 }
 
 .product-p {
@@ -24,7 +24,7 @@
 
 .product-div {
     margin-top: 70px;
-    margin-left: -200px;
+    margin-left: -100px;
     width: 100%;
     display: block;
     text-align: center;
@@ -65,16 +65,22 @@
     display: flex;
     justify-content: space-evenly;
     width: 700px;
-    margin-left: 200px;
+    margin-left: 50px;
 }
 
 .product-nav > * {
-    padding-right: 50px;
-    padding-left: 50px;
+    display: flex;
+    justify-content: center;
+    width: 5800px;
 }
 
 .product-nav :nth-child(-n+2) {
     border-right: 1px solid gray;
+}
+
+.shoe-name {
+    display: flex;
+    overflow: auto;
 }
 
 .size-option {
