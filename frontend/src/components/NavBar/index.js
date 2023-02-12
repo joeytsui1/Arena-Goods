@@ -55,8 +55,8 @@ const NavBar = () => {
 
                 <div className="logo-div"><img className="logo" src={logoImage} onClick={redirectHome}  /></div>
                 <div className="user-funcs">
-                    <p>Github</p>
-                    <p>Linkedin</p>
+                    <a href="https://github.com/joeytsui1">Github</a>
+                    <a href="https://www.linkedin.com/in/joey-tsui-5836a2240/">Linkedin</a>
                     <p>AngelLink</p>
                     <p>|</p>
                     {searchButton}
@@ -70,8 +70,8 @@ const NavBar = () => {
                 <a className="second-nav-p" href="/brands/adidas">ADIDAS</a>
                 <a className="second-nav-p" href="/brands/new-balance">NEW BALANCE</a>
                 <a className="second-nav-p" href="/brands/asics">ASICS</a>
-                <a className="second-nav-p" href="#">GITHUB</a>
-                <a className="second-nav-p" href="#">LINKEDIN</a>
+                <a className="second-nav-p" href="https://github.com/joeytsui1">GITHUB</a>
+                <a className="second-nav-p" href="https://www.linkedin.com/in/joey-tsui-5836a2240/">LINKEDIN</a>
                 <a className="second-nav-p" href="#">ANGELINK</a>
                 <a className="second-nav-p" href="/products">ALL BRANDS</a>
             </nav>

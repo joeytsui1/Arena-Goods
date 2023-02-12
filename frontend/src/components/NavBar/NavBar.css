@@ -37,7 +37,7 @@ header {
     justify-content: flex-end;
     width: 25%;
 }
-.user-funcs > p {
+.user-funcs > p,a {
     padding-right: 15px;
     padding-top: 3px;
     font-size: small;
