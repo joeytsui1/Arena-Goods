@@ -1,5 +1,5 @@
 .home-div {
-    padding-bottom: 300px;
+    padding-bottom: 100px;
 }
 .home-background-pic {
     width: 100%;
@@ -55,4 +55,22 @@
     letter-spacing: 0.05em;
     cursor: pointer;
     margin-bottom: 5px;
+}
+
+.swiper-slide {
+    margin-bottom: 100px;
+}
+
+.swiper-slide > div > img {
+    width: 350px;
+}
+
+.carousel-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.carousel-div > h1 {
+    margin-left: 20px;
+    font-size: x-large;
 }

@@ -1,7 +1,7 @@
 .product-wrapper{
     display: flex;
     justify-content: center ;
-    padding-bottom: 300px;
+    padding-bottom: 50px;
 }
 
 .product-img {
@@ -63,24 +63,22 @@
 
 .product-nav {
     display: flex;
-    justify-content: space-evenly;
-    width: 700px;
-    margin-left: 50px;
+    width: 1000px;
 }
 
 .product-nav > * {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    width: 5800px;
-}
-
-.product-nav :nth-child(-n+2) {
-    border-right: 1px solid gray;
+    font-size: x-small;
+    margin-left: 150px;
+    margin-right: -120px;
 }
 
 .shoe-name {
     display: flex;
     overflow: auto;
+    font-weight: bolder;
 }
 
 .size-option {
@@ -95,4 +93,38 @@
     width: 95%;
     margin-left: 13px;
     margin-bottom: 15px;
+    background-color: black;
+    color: white;
+    font-size: medium;
+    font-weight: 300;
+}
+
+.product-info-div{
+border: 1px solid lightgray;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.product-info-div > * {
+    border-right: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    width: 440px;
+    margin-left: 20px;
+}
+
+.product-info-div > * > p {
+    font-size: small;
+}
+
+.product-show-page-carousel {
+    margin-top: 50px;
+}
+
+.product-show-page-carousel > p {
+    font-weight: 600;
+    font-size: x-large;
+    margin-left: 30px;
 }

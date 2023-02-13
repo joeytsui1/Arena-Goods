@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from "react-redux"
 import { useParams } from "react-router-dom"
 import { useEffect } from "react"
-import { getProduct } from "../../store/product"
-import { Redirect } from "react-router-dom"
+import { getProduct, getProducts } from "../../store/product"
+import AllProductCarousel from "../Carousel/AllProductCarousel"
 import "./ProductShowPage.css"
 
 const ProductShowPage = () => {
@@ -10,25 +10,25 @@ const ProductShowPage = () => {
     const { productId } = useParams()
 
     const product = useSelector(state => state.products ? state.products[productId] : {})
+    const products = useSelector(state => state.products ? Object.values(state.products) : [])
+    const sampleProducts = products ? products.slice(0, 10) : []
     useEffect(() => {
         dispatch(getProduct(productId))
-
+        dispatch(getProducts())
     }, [dispatch, productId])
 
     if (product === undefined) {
         return <>Still loading...</>;
     }
 
-
-
     return (
         <>
         <div className="product-wrapper">
             <div className="product-div">
                 <nav className="product-nav">
-                    <a href="/">Home</a>
+                    <a href="/">HOME</a>
                     <a href={`/brands/${product.brand.toLowerCase()}`}>{product.brand}</a>
-                    <p className="shoe-name">{product.style} {product.name}</p>
+                    <a className="shoe-name">{product.style} {product.name}</a>
                 </nav>
                 <img className="product-img" src={product.image} alt='product-img'></img>
                 <p className="product-p">{product.description}</p>
@@ -41,15 +41,31 @@ const ProductShowPage = () => {
                 <div className="checkout-box">
                     <p>US Men sizes displayed </p>
                     <button className="size-option">Select Size</button>
-                    <button className="add-to-cart">Add to cart</button>
+                    <button className="add-to-cart">ADD TO CART</button>
                 </div>
             </div>
         </div>
-        <div>
+        <div className="product-info-div">
             <div>
                 <p>Manufactured SKU</p>
                 <p>{product.sku}</p>
             </div>
+            <div>
+                <p>Gender</p>
+                <p>{product.gender}</p>
+            </div>
+            <div>
+                <p>Nickname</p>
+                <p>{product.name}</p>
+            </div>
+            <div>
+                <p>Release Date</p>
+                <p>{product.releasedDate}</p>
+            </div>
+        </div>
+        <div className="product-show-page-carousel">
+            <p>You May Also Like</p>
+            <AllProductCarousel sampleProducts={sampleProducts}/>
         </div>
         </>
     )
