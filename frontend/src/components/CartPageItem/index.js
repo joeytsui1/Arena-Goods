@@ -11,13 +11,16 @@ const CartPageItem = (prop) => {
     }
     return (
         <>
-            <div>
-                <p>Style: {prop.product.style}</p>
-                <p>Name: {prop.product.name}</p>
-                <p>Size: {prop.product.size}</p>
-                <p>Quantity: {prop.product.quantity}</p>
-                <img className="cart-image" src={prop.product.image}/>
-                <a href="#" onClick={deleteOnClick}>Delete</a>
+            <div className="cart-item-div">
+                <img className="cart-image" src={prop.product.image} />
+                <div className="cart-item-info">
+                    <p>{prop.product.style}</p>
+                    <p>{prop.product.name}</p>
+                    <p>Price: ${prop.product.price}</p>
+                    <p>Size: {prop.product.size}</p>
+                    <p>Quantity: {prop.product.quantity}</p>
+                    <a href="#" onClick={deleteOnClick}>Delete</a>
+                </div>
             </div>
         </>
     )

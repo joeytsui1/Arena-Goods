@@ -1,3 +1,17 @@
+
+.cart-item-div{
+    display: flex;
+}
+
+.cart-item-div > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cart-item-info {
+    width: 300px;
+}
 .cart-image{
     width: 300px;
 }

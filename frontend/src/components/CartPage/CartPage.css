@@ -1,0 +1,46 @@
+.checkout-wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 100px;
+}
+
+.checkout-header {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.total-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    height: 100%;
+    position: sticky;
+    top: 60px;
+    margin-top: 20px;
+}
+
+
+.total-div > button {
+    margin-top: 30px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-size: large;
+}
+
+.total-info {
+    background-color: rgb(248, 248, 248);
+    padding: 20px;
+}
+
+.total-info > p {
+    font-size: medium;
+}
+
+.total-info > h1 {
+    margin-bottom: 20px;
+}

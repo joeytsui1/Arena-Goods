@@ -2,16 +2,21 @@ import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import { useEffect, useState } from "react"
 import { fetchUserCart } from "../../store/cart"
+import { getProducts } from "../../store/product"
 import CartPageItem from "../CartPageItem"
-import { Redirect } from "react-router-dom"
+import AllProductCarousel from "../Carousel/AllProductCarousel"
+import "./CartPage.css"
 
 const CartPage = () => {
     const dispatch = useDispatch()
     const currentUser = useSelector(state => state.session ? state.session.user : null)
     const cart = useSelector(state => state.cart ? Object.values(state.cart) : [])
-    
+    const products = useSelector(state => state.products ? Object.values(state.products) : [])
+    const sampleProducts = products ? products.slice(0, 10) : []
+
     useEffect(() => {
         dispatch(fetchUserCart(currentUser.id))
+        dispatch(getProducts())
     }, [currentUser.id])
 
 
@@ -20,8 +25,25 @@ const CartPage = () => {
     
     return (
         <>
-            <h1>{`Shopping Cart (${cartLength})`}</h1>
-            {cartInfo}
+            <h1 className="checkout-header">{`Shopping Cart (${cartLength})`}</h1>
+            <div className="checkout-wrapper">
+                <div>
+                    {cartInfo}
+                </div>
+                <div className="total-div">
+                    <div className="total-info">
+                        <h1>ORDER SUMMARY</h1>
+                        <p>Subtotal: $150</p>
+                        <p>Taxes: $0</p>
+                        <p>Total: $150</p>
+                    </div>
+                    <button className="total-div-button">CHECKOUT</button>
+                </div>
+            </div>
+            <div className="product-show-page-carousel">
+                <p>You May Also Like</p>
+                <AllProductCarousel sampleProducts={sampleProducts} />
+            </div>
         </>
     )
 }
