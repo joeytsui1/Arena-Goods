@@ -46,12 +46,12 @@ header {
     min-height: 1px;
     color: black;
     cursor: pointer;
-    padding-right: 25px;
+    margin-right: 25px;
 
 }
 
 .nav-search-button {
-    padding-right: 25px;
+    margin-right: 25px;
     color: black;
     cursor: pointer;
 }

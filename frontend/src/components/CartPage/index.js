@@ -1,24 +1,23 @@
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
-import { useEffect } from "react"
-import { fetchCart } from "../../store/cart"
+import { useEffect, useState } from "react"
+import { fetchUserCart } from "../../store/cart"
 import CartPageItem from "../CartPageItem"
+import { Redirect } from "react-router-dom"
 
 const CartPage = () => {
     const dispatch = useDispatch()
-    const currentUser = useSelector(state => state.session ? state.session.user : {})
+    const currentUser = useSelector(state => state.session ? state.session.user : null)
     const cart = useSelector(state => state.cart ? Object.values(state.cart) : [])
-
+    
     useEffect(() => {
-        dispatch(fetchCart())
-    }, [])
+        dispatch(fetchUserCart(currentUser.id))
+    }, [currentUser.id])
 
-    if (cart === undefined) {
-        return (<>Still loading...</>)
-    }
 
     const cartInfo = cart.map((product,i) => <CartPageItem key={i} product={product}/>)
     const cartLength = cart.length
+    
     return (
         <>
             <h1>{`Shopping Cart (${cartLength})`}</h1>
