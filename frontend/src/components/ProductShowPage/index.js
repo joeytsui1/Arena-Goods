@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { getProduct, getProducts } from "../../store/product"
 import AllProductCarousel from "../Carousel/AllProductCarousel"
+import { makeCart } from "../../store/cart"
+import { fetchUserCart } from "../../store/cart"
 import "./ProductShowPage.css"
 
 const ProductShowPage = () => {
@@ -12,11 +14,14 @@ const ProductShowPage = () => {
 
     const product = useSelector(state => state.products ? state.products[productId] : {})
     const products = useSelector(state => state.products ? Object.values(state.products) : [])
+    const currentUser = useSelector(state => state.session.user)
+    const cart = useSelector(state => state.cart ? Object.values(state.cart) : [])
     const sampleProducts = products ? products.slice(0, 10) : []
 
     useEffect(() => {
         dispatch(getProduct(productId))
         dispatch(getProducts())
+        dispatch(fetchUserCart(currentUser.id))
     }, [dispatch, productId])
 
     if (product === undefined) {
@@ -27,6 +32,19 @@ const ProductShowPage = () => {
         e.preventDefault()
         setHide(!hide)
     } 
+
+    console.log(currentUser)
+
+    const addToCart = (e) => {
+        const cart_item = {
+            user_id: currentUser.id,
+            product_id: product.id,
+            size: 8.5
+        }
+        dispatch(makeCart(cart_item))
+        window.location.reload()
+    }
+
     return (
         <>
         <div className="product-wrapper">
@@ -49,7 +67,7 @@ const ProductShowPage = () => {
                     <button className="size-option" onClick={handleClick}>Select Size</button>
                     {hide ? null : 
                     <div>is open</div> }
-                    <button className="add-to-cart">ADD TO CART</button>
+                    <button onClick={addToCart}className="add-to-cart">ADD TO CART</button>
                 </div>
             </div>
         </div>

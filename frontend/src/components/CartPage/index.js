@@ -14,6 +14,10 @@ const CartPage = () => {
     const products = useSelector(state => state.products ? Object.values(state.products) : [])
     const sampleProducts = products ? products.slice(0, 10) : []
 
+    const total = cart.reduce((acc, product) => acc += (product.price * product.quantity), 0)
+    console.log(total)
+
+
     useEffect(() => {
         dispatch(fetchUserCart(currentUser.id))
         dispatch(getProducts())
@@ -33,9 +37,9 @@ const CartPage = () => {
                 <div className="total-div">
                     <div className="total-info">
                         <h1>ORDER SUMMARY</h1>
-                        <p>Subtotal: $150</p>
+                        <p>{`Subtotal: $${total}`}</p>
                         <p>Taxes: $0</p>
-                        <p>Total: $150</p>
+                        <p>{`Total: $${total}`}</p>
                     </div>
                     <button className="total-div-button">CHECKOUT</button>
                 </div>

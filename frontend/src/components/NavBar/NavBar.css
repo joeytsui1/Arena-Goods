@@ -60,6 +60,22 @@ header {
     cursor: pointer;
 }
 
+.cart-length-number {
+    top: 1.1%;
+    left: 96.8%;
+    position: absolute;
+    background-color: black;
+    width: 14px;
+    height: 14px;
+    color: white;
+    border-radius: 50% 50% 50% 50%;
+    font-size: xx-small;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
 svg {
     height: 1.25em;
     width: 1.2em;

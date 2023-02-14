@@ -23,9 +23,12 @@ class User < ApplicationRecord
   validates :password, length: { in: 6..255 }, allow_nil: true
   before_validation :ensure_session_token
 
+  has_many :cart_items,
+    foreign_key: :user_id,
+    class_name: :ShoppingCart
+
 def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
-        # has_secure_password gives us the authenticate method
         if user&.authenticate(password)
             return user
         else
