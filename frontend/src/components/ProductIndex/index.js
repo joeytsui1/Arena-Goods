@@ -18,7 +18,6 @@ const ProductIndex = () => {
         )
     }
 
-
     const productDiv = products.map(product => <ProductIndexItem key={product.id} product={product}/>)
     const result = productDiv.length
     return (

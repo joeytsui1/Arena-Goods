@@ -9,6 +9,7 @@ import ProductShowPage from './components/ProductShowPage';
 import Footer from './components/Footer';
 import BrandShowPage from './components/BrandShowPage'
 import ErrorPage from './components/ErrorPage';
+import CartPage from './components/CartPage';
 
 function App() {
   return (
@@ -21,7 +22,9 @@ function App() {
       <Route path="/products/:productId" component={ProductShowPage} />
       <Route path="/brands/:brand" component={BrandShowPage} />
       <Route exact path="/"><IndexPage /></Route>
+      <Route path="/cart"><CartPage/></Route>
       <Route path="*" component={ErrorPage} />
+
     </Switch>
     <Footer></Footer>
     </>

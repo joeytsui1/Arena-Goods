@@ -2,6 +2,7 @@ import './ProductIndexItem.css'
 import { useHistory } from 'react-router-dom'
 const ProductIndexItem = (prop) => {
     const history = useHistory()
+    
     const handleClick = () => {
         history.push(`/products/${prop.product.id}`)
     }

@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux"
 import { useParams } from "react-router-dom"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { getProduct, getProducts } from "../../store/product"
 import AllProductCarousel from "../Carousel/AllProductCarousel"
 import "./ProductShowPage.css"
@@ -8,10 +8,12 @@ import "./ProductShowPage.css"
 const ProductShowPage = () => {
     const dispatch = useDispatch()
     const { productId } = useParams()
+    const [hide, setHide] = useState(true)
 
     const product = useSelector(state => state.products ? state.products[productId] : {})
     const products = useSelector(state => state.products ? Object.values(state.products) : [])
     const sampleProducts = products ? products.slice(0, 10) : []
+
     useEffect(() => {
         dispatch(getProduct(productId))
         dispatch(getProducts())
@@ -21,12 +23,16 @@ const ProductShowPage = () => {
         return <>Still loading...</>;
     }
 
+    const handleClick = (e) => {
+        e.preventDefault()
+        setHide(!hide)
+    } 
     return (
         <>
         <div className="product-wrapper">
             <div className="product-div">
                 <nav className="product-nav">
-                    <a href="/">HOME</a>
+                    <a href="/">ARENA GOODS</a>
                     <a href={`/brands/${product.brand.toLowerCase()}`}>{product.brand}</a>
                     <a className="shoe-name">{product.style} {product.name}</a>
                 </nav>
@@ -40,7 +46,9 @@ const ProductShowPage = () => {
                 <span>${product.price}</span>
                 <div className="checkout-box">
                     <p>US Men sizes displayed </p>
-                    <button className="size-option">Select Size</button>
+                    <button className="size-option" onClick={handleClick}>Select Size</button>
+                    {hide ? null : 
+                    <div>is open</div> }
                     <button className="add-to-cart">ADD TO CART</button>
                 </div>
             </div>

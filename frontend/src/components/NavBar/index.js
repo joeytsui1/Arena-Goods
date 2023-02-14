@@ -1,18 +1,27 @@
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/session";
 import { useHistory } from "react-router-dom";
+import { useEffect } from "react";
 import logoImage from './images/logo.jpg'
 import "./NavBar.css"
+import { getProducts } from "../../store/product";
 
 const NavBar = () => {
     const dispatch = useDispatch()
     const history = useHistory()
     const currentUser = useSelector(state => state.session.user)
+    const products = useSelector(state => state.products ? Object.values(state.products) : [])
+    
+    useEffect(() => {
+        dispatch(getProducts)
+    }, [])
 
     const handleClick = (e) => {
         e.preventDefault(); 
         dispatch(logout());
     }
+
+    const uniqueBrands = [...new Set(products.filter(product => product.brand).map(product => product.brand))];
 
     const redirectLogin = () => {
         history.push("/login")
@@ -21,10 +30,6 @@ const NavBar = () => {
     const redirectHome = () => {
         history.push("/")
     }
-
-    const logoutButton = (
-        <button onClick={handleClick}>Sign out</button>
-    )
 
     const loginButton = (
         <svg className="nav-login-button" onClick={currentUser ? handleClick : redirectLogin}>
@@ -35,7 +40,7 @@ const NavBar = () => {
 
     const cartButton = (
 
-        <svg className="nav-cart-button">
+        <svg className="nav-cart-button" onClick={() => history.push("/cart")}>
             <path d="M16 6.5H13.5V5C13.5 2.243 11.257 0 8.5 0C5.743 0 3.5 2.243 3.5 5V6.5H1C0.724 6.5 0.5 6.724 0.5 7V19.5C0.5 19.776 0.724 20 1 20H16C16.276 20 16.5 19.776 16.5 19.5V7C16.5 6.724 16.276 6.5 16 6.5ZM4.5 5C4.5 2.7945 6.2945 1 8.5 1C10.7055 1 12.5 2.7945 12.5 5V6.5H4.5V5ZM1.5 7.5H3.5V9.5C3.5 9.776 3.724 10 4 10C4.276 10 4.5 9.776 4.5 9.5V7.5H12.5V9.5C12.5 9.776 12.724 10 13 10C13.276 10 13.5 9.776 13.5 9.5V7.5H15.5V16H1.5V7.5ZM15.5 19H1.5V17H15.5V19Z" fill="currentColor"></path>
         </svg>
 
@@ -65,11 +70,7 @@ const NavBar = () => {
                 </div>
             </header>
             <nav className="second-nav">
-                <a className="second-nav-p" href="/brands/jordan">JORDAN</a>
-                <a className="second-nav-p" href="/brands/nike">NIKE</a>
-                <a className="second-nav-p" href="/brands/adidas">ADIDAS</a>
-                <a className="second-nav-p" href="/brands/new-balance">NEW BALANCE</a>
-                <a className="second-nav-p" href="/brands/asics">ASICS</a>
+                {uniqueBrands.map((brand, i) => <a className="second-nav-p" key={i} href={`/brands/${brand.toLowerCase()}`}>{brand}</a>)}
                 <a className="second-nav-p" href="https://github.com/joeytsui1">GITHUB</a>
                 <a className="second-nav-p" href="https://www.linkedin.com/in/joey-tsui-5836a2240/">LINKEDIN</a>
                 <a className="second-nav-p" href="#">ANGELINK</a>
