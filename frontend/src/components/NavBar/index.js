@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import logoImage from './images/logo.jpg'
 import "./NavBar.css"
 import { getProducts } from "../../store/product";
+import { fetchUserCart } from "../../store/cart";
 
 const NavBar = () => {
     const dispatch = useDispatch()
@@ -16,6 +17,7 @@ const NavBar = () => {
 
     useEffect(() => {
         dispatch(getProducts)
+        currentUser ? dispatch(fetchUserCart(currentUser.id)) : dispatch(() => 1)
     }, [])
 
     const handleClick = (e) => {
@@ -26,7 +28,7 @@ const NavBar = () => {
 
     const uniqueBrands = [...new Set(products.filter(product => product.brand).map(product => product.brand))];
     const cartLength = cart.length
-    const num = cartLength === 0 ? null : <span className="cart-length-number">{cartLength}</span>
+    const num = cartLength === 0 || !currentUser ? null : <span className="cart-length-number">{cartLength}</span>
 
     const redirectLogin = () => {
         history.push("/login")
@@ -68,6 +70,7 @@ const NavBar = () => {
 
                 <div className="logo-div"><img className="logo" src={logoImage} onClick={redirectHome}  /></div>
                 <div className="user-funcs">
+                    {currentUser ? <p className="name">Hello, {currentUser.first}!</p> : null }
                     <a href="https://github.com/joeytsui1">Github</a>
                     <a href="https://www.linkedin.com/in/joey-tsui-5836a2240/">Linkedin</a>
                     <p>AngelLink</p>

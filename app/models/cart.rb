@@ -6,11 +6,13 @@
 #  user_id    :bigint
 #  product_id :bigint
 #  quantity   :integer          default(1), not null
-#  size       :float
+#  size       :float            not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 class Cart < ApplicationRecord
+    validates :size, presence: true
+    
     belongs_to :user,
         foreign_key: :user_id,
         class_name: :User

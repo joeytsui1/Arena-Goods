@@ -30,7 +30,11 @@ class Api::CartsController < ApplicationController
         if @cart
             @cart.quantity = params[:quantity]
             @cart.size = params[:size]
+            @cart.save!
         end
+        @user = User.find(params[:user_id])
+        @cart = Cart.where(user_id: @user[:id])
+        render :show
     end
 
     def destroy

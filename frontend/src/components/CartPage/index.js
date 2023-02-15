@@ -12,7 +12,7 @@ const CartPage = () => {
     const currentUser = useSelector(state => state.session ? state.session.user : null)
     const cart = useSelector(state => state.cart ? Object.values(state.cart) : [])
     const products = useSelector(state => state.products ? Object.values(state.products) : [])
-    const sampleProducts = products ? products.slice(0, 10) : []
+    const randomizeProducts = products ? products.sort(() => Math.random() - 0.5).slice(0, 10) : []
 
     const total = cart.reduce((acc, product) => acc += (product.price * product.quantity), 0)
     console.log(total)
@@ -46,7 +46,7 @@ const CartPage = () => {
             </div>
             <div className="product-show-page-carousel">
                 <p>You May Also Like</p>
-                <AllProductCarousel sampleProducts={sampleProducts} />
+                <AllProductCarousel randomizeProducts={randomizeProducts} />
             </div>
         </>
     )

@@ -81,3 +81,6 @@ svg {
     width: 1.2em;
 }
 
+.name {
+    margin-left: -50px;
+}

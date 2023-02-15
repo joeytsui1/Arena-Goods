@@ -11,7 +11,26 @@
 
 .cart-item-info {
     width: 300px;
+    
 }
+
+.cart-item-info > p {
+    font-size: small;
+}
+
+.cart-crud-action {
+    text-decoration: none;
+}
+
+.cart-crud-action:hover {
+    text-decoration: underline;
+}
+
 .cart-image{
     width: 300px;
+}
+
+.cart-price-style {
+    display: flex;
+    justify-content: space-between;
 }

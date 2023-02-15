@@ -58,10 +58,10 @@ export const fetchUserCart = (userId) => async dispatch => {
 }
 
 export const patchCart = (cart) => async dispatch => {
-    const { user_id, product_id, quantity, size } = cart
+    const { userId, productId, quantity, size } = cart
     const res = await csrfFetch(`/api/carts/${cart.id}`, {
         method: "PATCH",
-        body: JSON.stringify({ user_id, product_id, quantity, size })
+        body: JSON.stringify({ userId, productId, quantity, size })
     })
 
     const data = await res.json()
