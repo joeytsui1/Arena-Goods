@@ -1,8 +1,3 @@
-.disable{
-    margin: 0;
-    height: 100%;
-    overflow: hidden
-}
 .checkout-wrapper {
     display: flex;
     justify-content: space-around;
@@ -46,11 +41,20 @@ body.modal-open {
     padding: 20px;
 }
 
-.total-info > p {
+.total-info > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-info > div > p {
     font-size: medium;
     margin-top: 10px    ;
 }
 
 .total-info > h1 {
     margin-bottom: 20px;
+}
+
+.total-price > p{
+    font-weight: 600;
 }

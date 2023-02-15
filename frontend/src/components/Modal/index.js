@@ -5,8 +5,8 @@ import { patchCart } from '../../store/cart'
 
 const Modal = prop => {
     const dispatch = useDispatch()
-    const [size, setSize] = useState(null)
-    const [quantity, setQuantity] = useState(null)
+    const [size, setSize] = useState(prop.product.size)
+    const [quantity, setQuantity] = useState(prop.product.quantity)
     const [sizeHide, setSizeHide] = useState(true)
     const [quantityHide, setQuantityHide] = useState(true)
 

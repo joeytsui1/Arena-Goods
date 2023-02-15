@@ -37,9 +37,19 @@ const CartPage = () => {
                 <div className="total-div">
                     <div className="total-info">
                         <h1>ORDER SUMMARY</h1>
-                        <p>{`Subtotal: $${total}`}</p>
-                        <p>Taxes: $0</p>
-                        <p>{`Total: $${total}`}</p>
+                        <div>
+                            <p>{`Subtotal:`}</p>
+                            <p>${total}</p>
+                        </div>
+                        <div>
+                            <p>Taxes:</p>
+                            <p>$0</p>
+                        </div>
+                        <div className="total-price">
+                            <p>{`Total:`}</p>
+                            <p>${total}</p>
+                        </div>
+                        
                     </div>
                     <button className="total-div-button">CHECKOUT</button>
                 </div>
