@@ -20,6 +20,7 @@ class Product < ApplicationRecord
     
     has_many :shopping_carts,
         foreign_key: :product_id,
-        class_name: :ShoppingCart
+        class_name: :ShoppingCart,
+        dependent: :destroy
     # has_many_attached :images
 end
