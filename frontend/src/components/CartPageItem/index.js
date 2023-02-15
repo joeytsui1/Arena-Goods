@@ -2,10 +2,12 @@ import "./CartPageItem.css"
 import { useEffect,useState } from "react"
 import { useDispatch } from "react-redux"
 import { removeCart, patchCart } from "../../store/cart"
+import { useHistory } from "react-router-dom"
 import Modal from "../Modal"
 
 const CartPageItem = (prop) => {
     const dispatch = useDispatch()
+    const history = useHistory()
     const [show, setShow] = useState(false)
     console.log(prop)
     useEffect(() => {
@@ -15,7 +17,7 @@ const CartPageItem = (prop) => {
             document.body.classList.remove('modal-open');
         }
 
-    }, [show    ])
+    }, [show])
     
     const deleteOnClick = (e) => {
         e.preventDefault()
@@ -31,7 +33,7 @@ const CartPageItem = (prop) => {
         <>
             
             <div className="cart-item-div">
-                <img className="cart-image" src={prop.product.image} />
+                <img className="cart-image" onClick={() => {history.push(`/products/${prop.product.productId}`)}} src={prop.product.image} />
                 <div className="cart-item-info">
                     <div className="cart-price-style">
                         <p>{prop.product.style}</p>

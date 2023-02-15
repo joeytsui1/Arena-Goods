@@ -51,13 +51,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid lightgray;
     width: 100%;
     margin-top: 20px;
 }
 
 .checkout-box > * {
-    padding: 15px;
+    padding: 0px 15px 15px 15px;
 }
 
 .checkout-box > p {
@@ -89,8 +88,8 @@
     border: 1px solid lightgray;
     width: 95%;
     margin-top: 15px;
-    margin-left: 13px;
-    margin-bottom: 15px;
+    margin-left: 15px;
+    padding-top: 15px;
     display: flex;
     justify-content: space-between;
     font-weight: bolder;
@@ -104,7 +103,7 @@
 }
 .size-inner-option {
     border: 1px solid lightgray;
-    width: 100%;
+    width: 101.2%;
     height: 47px;
     font-weight:bolder;
     font-size: medium;
@@ -122,6 +121,7 @@
     margin-left: 13px;
     margin-top: 20px;
     margin-bottom: 15px;
+    padding-top: 15px;
     background-color: black;
     color: white;
     font-size: medium;

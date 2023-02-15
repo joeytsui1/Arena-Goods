@@ -11,10 +11,12 @@ class Api::CartsController < ApplicationController
     end
 
     def create
+
         @cart = Cart.find_by(user_id: params[:user_id], product_id: params[:product_id], size: params[:size])
-        
+
         if @cart
-            @cart.quantity = params[:quantity]
+
+            @cart.quantity += 1 
             @cart.save!
         else
             @cart = Cart.new(carts_params)
@@ -22,6 +24,7 @@ class Api::CartsController < ApplicationController
         end
         @user = User.find(params[:user_id])
         @cart = Cart.where(user_id: @user[:id])
+
         render :show
     end
 

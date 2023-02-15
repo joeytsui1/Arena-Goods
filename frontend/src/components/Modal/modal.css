@@ -49,3 +49,7 @@
 .modal-img{
     width: 200px;
 }
+
+.update-modal > button {
+    font-size: small;
+}

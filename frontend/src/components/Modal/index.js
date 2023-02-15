@@ -81,7 +81,7 @@ const Modal = prop => {
                     </button>
                     {sizeHide ? null :
                         <>
-                            <div className="inner-buttons-div">
+                            <div className="inner-buttons-div update-modal">
                                 <button className="size-inner-option" value={4} onClick={sizeClick}>Size 4</button>
                                 <button className="size-inner-option" value={4.5} onClick={sizeClick}>Size 4.5</button>
                                 <button className="size-inner-option" value={5} onClick={sizeClick}>Size 5</button>
@@ -112,7 +112,7 @@ const Modal = prop => {
                     </button>
                     {quantityHide ? null :
                         <>
-                            <div className="inner-buttons-div">
+                            <div className="inner-buttons-div update-modal">
                                 <button className="size-inner-option" value={1} onClick={quantityClick}>1</button>
                                 <button className="size-inner-option" value={2} onClick={quantityClick}>2</button>
                                 <button className="size-inner-option" value={3} onClick={quantityClick}>3</button>

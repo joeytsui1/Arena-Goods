@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/session";
 import { useHistory } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import logoImage from './images/logo.jpg'
 import "./NavBar.css"
 import { getProducts } from "../../store/product";
@@ -13,12 +13,21 @@ const NavBar = () => {
     const currentUser = useSelector(state => state.session.user)
     const products = useSelector(state => state.products ? Object.values(state.products) : [])
     const cart = useSelector(state => state.cart ? Object.values(state.cart) : [])
-
+    const [isLoading, setLoading] = useState(true)
 
     useEffect(() => {
         dispatch(getProducts)
         currentUser ? dispatch(fetchUserCart(currentUser.id)) : dispatch(() => 1)
+        setLoading(false)
     }, [])
+
+    if (isLoading) {
+        return (
+            <>
+                still loading..
+            </>
+        )
+    }
 
     const handleClick = (e) => {
         e.preventDefault(); 
@@ -27,8 +36,18 @@ const NavBar = () => {
     }
 
     const uniqueBrands = [...new Set(products.filter(product => product.brand).map(product => product.brand))];
-    const cartLength = cart.length
-    const num = cartLength === 0 || !currentUser ? null : <span className="cart-length-number">{cartLength}</span>
+    
+    let nums = 0
+
+    for(let i = 0; i < cart.length; i++) {
+        if(cart[i].quantity) {
+            nums += cart[i].quantity
+        } else {
+            nums += 0
+        }
+    }
+
+    const num = nums === 0 || !currentUser ? null : <span className="cart-length-number">{nums}</span>
 
     const redirectLogin = () => {
         history.push("/login")

@@ -25,7 +25,7 @@ const ProductShowPage = () => {
         dispatch(getProduct(productId))
         dispatch(getProducts())
         currentUser ? dispatch(fetchUserCart(currentUser.id)) : dispatch(() => 1)
-    }, [dispatch, productId, cart.length, size])
+    }, [dispatch, productId, size, cart.length])
 
     if (product === undefined) {
         return <>Still loading...</>;
@@ -54,7 +54,6 @@ const ProductShowPage = () => {
         }
         dispatch(makeCart(cart_item))
     }
-    console.log(size)
     const text = size ? `US Size ${size}` : "Select A Size"
     return (
         <>
