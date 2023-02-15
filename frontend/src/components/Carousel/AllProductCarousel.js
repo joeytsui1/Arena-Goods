@@ -3,8 +3,6 @@ import ProductIndexItem from "../ProductIndexItem";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, A11y } from "swiper";
 import "swiper/css";
-import "swiper/css/navigation";
-
 
 const AllProductCarousel = ({randomizeProducts}) => {
 

@@ -71,6 +71,7 @@ const NavBar = () => {
                 <div className="logo-div"><img className="logo" src={logoImage} onClick={redirectHome}  /></div>
                 <div className="user-funcs">
                     {currentUser ? <p className="name">Hello, {currentUser.first}!</p> : null }
+                    <p>|</p>
                     <a href="https://github.com/joeytsui1">Github</a>
                     <a href="https://www.linkedin.com/in/joey-tsui-5836a2240/">Linkedin</a>
                     <p>AngelLink</p>

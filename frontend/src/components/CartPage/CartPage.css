@@ -1,3 +1,8 @@
+.disable{
+    margin: 0;
+    height: 100%;
+    overflow: hidden
+}
 .checkout-wrapper {
     display: flex;
     justify-content: space-around;
@@ -21,6 +26,10 @@
     position: sticky;
     top: 60px;
     margin-top: 20px;
+}
+
+body.modal-open {
+    overflow: hidden;
 }
 
 

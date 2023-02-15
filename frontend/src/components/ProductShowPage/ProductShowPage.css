@@ -88,6 +88,7 @@
 .size-option {
     border: 1px solid lightgray;
     width: 95%;
+    margin-top: 15px;
     margin-left: 13px;
     margin-bottom: 15px;
     display: flex;
@@ -98,21 +99,28 @@
 
 .inner-buttons-div {
     max-height: 300px;
+    height: 400px;
     overflow: auto;
 }
 .size-inner-option {
     border: 1px solid lightgray;
     width: 100%;
-    height: 50px;
+    height: 47px;
     font-weight:bolder;
     font-size: medium;
     color: rgb(101, 101, 101);
+    cursor: pointer;
+}
+
+.size-inner-option:hover{
+    background-color: rgb(249, 249, 249);
 }
 
 .add-to-cart {
     border: 1px solid lightgray;
     width: 95%;
     margin-left: 13px;
+    margin-top: 20px;
     margin-bottom: 15px;
     background-color: black;
     color: white;

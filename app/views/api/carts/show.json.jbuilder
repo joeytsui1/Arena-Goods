@@ -5,4 +5,5 @@ json.array! @cart do |eachCart|
   json.style eachCart.product.style
   json.image eachCart.product.image
   json.price eachCart.product.price
+  json.brand eachCart.product.brand
 end

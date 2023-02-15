@@ -24,16 +24,14 @@
     letter-spacing: 0.08 rem;
     padding: 6px;
     margin-bottom: 25px;
-    position: relative;
 }
 
 .footer-p {
     font-size: medium;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .footer-sign-button {
-        position: relative;
             font-size: 0.9rem;
             font-family: ProximaNova, sans-serif;
             text-align: center;
@@ -48,6 +46,7 @@
             background-color: rgb(19, 19, 19);
             letter-spacing: 0.05em;
             cursor: pointer;
+            margin-bottom: 15px;
 }
 
 .footer-refer {
@@ -64,7 +63,6 @@
 }
 
 .refer-button {
-            position: relative;
                 font-size: 0.9rem;
                 font-family: ProximaNova, sans-serif;
                 text-align: center;

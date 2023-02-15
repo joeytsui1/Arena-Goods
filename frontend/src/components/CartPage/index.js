@@ -14,13 +14,13 @@ const CartPage = () => {
     const products = useSelector(state => state.products ? Object.values(state.products) : [])
     const randomizeProducts = products ? products.sort(() => Math.random() - 0.5).slice(0, 10) : []
 
-    const total = cart.reduce((acc, product) => acc += (product.price * product.quantity), 0)
-    console.log(total)
 
+    const total = cart.reduce((acc, product) => acc += (product.price * product.quantity), 0)
 
     useEffect(() => {
         dispatch(fetchUserCart(currentUser.id))
         dispatch(getProducts())
+
     }, [currentUser.id])
 
 
@@ -44,10 +44,12 @@ const CartPage = () => {
                     <button className="total-div-button">CHECKOUT</button>
                 </div>
             </div>
+
             <div className="product-show-page-carousel">
                 <p>You May Also Like</p>
                 <AllProductCarousel randomizeProducts={randomizeProducts} />
             </div>
+
         </>
     )
 }

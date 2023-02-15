@@ -1,8 +1,21 @@
 import "./CartPageItem.css"
+import { useEffect,useState } from "react"
 import { useDispatch } from "react-redux"
 import { removeCart, patchCart } from "../../store/cart"
+import Modal from "../Modal"
+
 const CartPageItem = (prop) => {
     const dispatch = useDispatch()
+    const [show, setShow] = useState(false)
+    console.log(prop)
+    useEffect(() => {
+        if (show) {
+            document.body.classList.add('modal-open');
+        } else {
+            document.body.classList.remove('modal-open');
+        }
+
+    }, [show    ])
     
     const deleteOnClick = (e) => {
         e.preventDefault()
@@ -10,17 +23,13 @@ const CartPageItem = (prop) => {
         window.location.reload()
     }
 
-    const updateOnClick = (e) => {
+    const showModal = (e) => {
         e.preventDefault()
-        const updated = {
-            ...prop.product,
-            size: 9
-        }
-        dispatch(patchCart(updated))
-        window.location.reload()
+        setShow(!show)
     }
     return (
         <>
+            
             <div className="cart-item-div">
                 <img className="cart-image" src={prop.product.image} />
                 <div className="cart-item-info">
@@ -33,7 +42,8 @@ const CartPageItem = (prop) => {
                     <p>Quantity: {prop.product.quantity}</p>
                     <div>
                         <a href="#" className="cart-crud-action" onClick={deleteOnClick}>Delete</a>
-                        <span><a href="#" className="cart-crud-action" onClick={updateOnClick}>Update</a></span>
+                        <span><a href="#" className="cart-crud-action" onClick={showModal}>Update</a></span>
+                        <Modal product={prop.product} onClose={() => setShow(false)} show={show} />
                     </div>
                 </div>
             </div>
