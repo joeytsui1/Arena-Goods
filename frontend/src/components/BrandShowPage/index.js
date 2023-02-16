@@ -3,15 +3,18 @@ import { Redirect, useParams } from "react-router-dom"
 import { useEffect } from "react"
 import { getProducts } from "../../store/product"
 import ProductIndexItem from "../ProductIndexItem"
+import { fetchUserFavorite } from "../../store/favorite"
 import "./BrandShowPage.css"
 
 const BrandShowPage = () => {
     const dispatch = useDispatch()
     const products = useSelector(state => state.products ? Object.values(state.products) : [])
+    const currentUser = useSelector(state => state.session ? state.session.user : null)
     const { brand } = useParams()
 
     useEffect(() => {
         dispatch(getProducts())
+        currentUser ? dispatch(fetchUserFavorite(currentUser.id)) : dispatch(() => 1)
     }, [])
 
     let image

@@ -7,6 +7,8 @@ import Carousel from "../Carousel/AllProductCarousel"
 import AdidasCarousel from "../Carousel/AdidasCarousel"
 import JordanCarousel from "../Carousel/JordanCarousel"
 import NikeCarousel from "../Carousel/NikeCarousel"
+import { fetchUserFavorite } from "../../store/favorite"
+
 
 const IndexPage = () => {
     const history = useHistory()

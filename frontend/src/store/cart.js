@@ -40,6 +40,7 @@ export const fetchCart = () => async dispatch => {
 }
 
 export const makeCart = (cart) => async dispatch => {
+    // debugger
     const {user_id, product_id, quantity, size} = cart
     const res = await csrfFetch('/api/carts', {
         method: "POST",
@@ -81,19 +82,13 @@ const cartReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_ALL_CART:
-            const carts = Array.isArray(action.carts) ? action.carts : [action.carts];
-            const newCartState = carts.reduce((cartObj, cart) => {
-                return { ...cartObj, [cart.id]: cart }
-            }, {})
-            return { ...state, ...newCartState }
+            return { ...state, ...action.carts }
         case RECEIVE_CART:
             return {...action.cart}
         case ADD_TO_CART:
-            newState[action.product.id] = Object.assign({}, action.product)
-            return newState
+            return {...action.product}
         case UPDATE_CART:
-            newState[action.product.id] = Object.assign({}, action.product)
-            return newState
+            return {...action.product}
         case DELETE_CART:
             delete newState[action.cartId]
             return newState

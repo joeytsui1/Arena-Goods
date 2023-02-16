@@ -27,7 +27,7 @@ const Modal = prop => {
             quantity: quantity
         }
         dispatch(patchCart(updated))
-        window.location.reload()
+        prop.onClose()  
     }
 
     // FOR SIZES

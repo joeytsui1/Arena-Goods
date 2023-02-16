@@ -12,7 +12,7 @@ const AdidasCarousel = ({adidas2}) => {
         <Swiper
             style={{ width: "100%", height: "100%" }}
             modules={[Navigation, A11y]}
-            spaceBetween={-100}
+            spaceBetween={0}
             slidesPerView={5}
             navigation
         >

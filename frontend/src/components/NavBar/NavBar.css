@@ -35,7 +35,7 @@ header {
 .user-funcs {
     display: flex;
     justify-content: flex-end;
-    width: 25%;
+    max-width: 50%;
 }
 .user-funcs > p,a {
     padding-right: 15px;
@@ -76,6 +76,22 @@ header {
     justify-content: center;
 }
 
+.follow-number {
+    top: 1.1%;
+    left: 94.5%;
+    position: absolute;
+    background-color: black;
+    width: 14px;
+    height: 14px;
+    color: white;
+    border-radius: 50% 50% 50% 50%;
+    font-size: xx-small;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
 svg {
     height: 1.25em;
     width: 1.2em;
@@ -83,4 +99,8 @@ svg {
 
 .name {
     margin-left: -60px;
+}
+
+.heart {
+    margin-right: 25px;
 }

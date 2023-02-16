@@ -1,5 +1,5 @@
 .each-product-img{
-    width: 400px;
+    width: 350px;
 }
 .each-product-item{
     display: block;
@@ -15,4 +15,12 @@
 
 .each-product-brand {
     font-weight: 700;
+}
+
+.fix-this-shit {
+    display: flex;
+    justify-content: flex-end;
+    width: 120px;
+    margin-left: 280px;
+    cursor: pointer;
 }

@@ -6,6 +6,7 @@ import AllProductCarousel from "../Carousel/AllProductCarousel"
 import { makeCart } from "../../store/cart"
 import { fetchUserCart } from "../../store/cart"
 import { useHistory } from "react-router-dom"
+import { fetchUserFavorite } from "../../store/favorite"
 import "./ProductShowPage.css"
 
 const ProductShowPage = () => {
@@ -24,6 +25,7 @@ const ProductShowPage = () => {
     useEffect(() => {
         dispatch(getProduct(productId))
         dispatch(getProducts())
+        currentUser ? dispatch(fetchUserFavorite(currentUser.id)) : dispatch(() => 1)
         currentUser ? dispatch(fetchUserCart(currentUser.id)) : dispatch(() => 1)
     }, [dispatch, productId, size, cart.length])
 

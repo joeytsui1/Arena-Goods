@@ -23,6 +23,7 @@
     "node": "16.x"
   },
   "dependencies": {
+    "react-icons": "^4.7.1",
     "swiper": "^9.0.4"
   }
 }

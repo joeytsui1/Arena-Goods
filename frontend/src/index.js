@@ -10,6 +10,7 @@ import csrfFetch, { restoreCSRF } from './store/csrf';
 import * as sessionActions from './store/session'
 import * as productActions from './store/product'
 import * as cartActions from './store/cart'
+import * as favoriteActions from './store/favorite'
 
 
 const store = configureStore()
@@ -20,6 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.sessionActions = sessionActions
   window.productActions = productActions
   window.cartActions = cartActions
+  window.favoriteActions = favoriteActions
 }
 
 function Root() {

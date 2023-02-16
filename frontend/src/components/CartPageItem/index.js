@@ -3,7 +3,7 @@ import { useEffect,useState } from "react"
 import { useDispatch } from "react-redux"
 import { removeCart, patchCart } from "../../store/cart"
 import { useHistory } from "react-router-dom"
-import Modal from "../Modal"
+import Modal from "../Modal/UpdateModal"
 
 const CartPageItem = (prop) => {
     const dispatch = useDispatch()

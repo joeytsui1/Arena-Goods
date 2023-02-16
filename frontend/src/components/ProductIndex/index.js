@@ -7,9 +7,10 @@ import "./ProductIndex.css"
 const ProductIndex = () => {
     const dispatch = useDispatch() 
     const products = useSelector(state => state.products ? Object.values(state.products) : [])
-
+    
     useEffect(() => {
         dispatch(getProducts())
+
     }, [])
 
     if(products === undefined) {

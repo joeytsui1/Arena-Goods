@@ -5,6 +5,7 @@ import { fetchUserCart } from "../../store/cart"
 import { getProducts } from "../../store/product"
 import CartPageItem from "../CartPageItem"
 import AllProductCarousel from "../Carousel/AllProductCarousel"
+import { fetchUserFavorite } from "../../store/favorite"
 import "./CartPage.css"
 
 const CartPage = () => {
@@ -20,7 +21,7 @@ const CartPage = () => {
     useEffect(() => {
         dispatch(fetchUserCart(currentUser.id))
         dispatch(getProducts())
-
+        dispatch(fetchUserFavorite(currentUser.id))
     }, [currentUser.id])
 
 
