@@ -24,7 +24,7 @@ const IndexPage = () => {
         history.push("/brands/jordan")
     }
     
-    const randomizeProducts = products ? products.sort(() => Math.random() - 0.5).slice(0, 10) : []
+    const randomizeProducts = products ? products.slice(0, 10) : []
     const jordan = products.filter(product => product.brand.toLowerCase().includes("jordan"))
     const jordans = jordan ? jordan.slice(0, 10) : []
     const nike = products.filter(product => product.brand.toLowerCase().includes("nike"))

@@ -34,9 +34,10 @@ const NavBar = () => {
     }
 
     const handleClick = (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         dispatch(logout());
-        history.push("/")
+        history.push("/login")
+
     }
 
     const uniqueBrands = [...new Set(products.filter(product => product.brand).map(product => product.brand))];

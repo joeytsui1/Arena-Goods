@@ -22,6 +22,7 @@ const ProductIndexItem = (prop) => {
         dispatch(makeFavorite(product))
         setHide(false)
         localStorage.setItem(`product_${prop.product.id}_hide`, true)
+        
     }
 
     const removeFavoriteClick = (e) => {

@@ -12,7 +12,7 @@ const FavoriteShowPage = () => {
     const length = favorites.length
     useEffect(() => {
         dispatch(fetchUserFavorite(currentUser.id))
-    }, [currentUser.id])
+    }, [currentUser.id, length])
 
     const ProductDiv = favorites.map(product => <ProductIndexItem key={product.productId} product={product} />)
     

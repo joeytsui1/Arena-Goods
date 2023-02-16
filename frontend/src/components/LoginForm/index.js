@@ -6,7 +6,7 @@ import "./LoginForm.css"
 const LoginFormPage = () => {
     const currentUser = useSelector(state => state.session.user)
 
-    return currentUser ?  (<Redirect to="/"/>) : (
+    return currentUser ? (<Redirect to="/"/>) : (
         <LoginForm></LoginForm>
     )
 }
