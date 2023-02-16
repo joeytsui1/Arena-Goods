@@ -1,7 +1,9 @@
+import "./ErrorPage.css"
+
 const ErrorPage = () => {
     return (
         <>
-            404 PAGE NOT FOUND
+            <h1 className="error-header">404 PAGE NOT FOUND</h1>
         </>
     )
 }

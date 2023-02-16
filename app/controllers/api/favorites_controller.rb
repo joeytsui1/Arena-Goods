@@ -10,6 +10,7 @@ class Api::FavoritesController < ApplicationController
     end
 
     def create
+
         @favorite = Favorite.find_by(favorites_params)
         if !@favorite
             @favorite = Favorite.new(favorites_params)

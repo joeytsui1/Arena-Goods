@@ -1,0 +1,11 @@
+.favorites-header {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: -40px;
+}
+
+.favorites-header > h1 {
+    font-size: x-large;
+    font-weight: 700;
+}

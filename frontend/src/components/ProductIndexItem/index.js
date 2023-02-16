@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 
 const ProductIndexItem = (prop) => {
+
     const history = useHistory()
     const dispatch = useDispatch()
     const currentUser = useSelector(state => state.session.user)
@@ -28,6 +29,7 @@ const ProductIndexItem = (prop) => {
         dispatch(removeFavorite(prop.product.id))
         setHide(true)
         localStorage.setItem(`product_${prop.product.id}_hide`, false)
+        window.location.reload()
     }
 
     const redirectLogin = () => {
