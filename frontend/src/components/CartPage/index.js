@@ -3,20 +3,23 @@ import { useSelector } from "react-redux"
 import { useEffect, useState } from "react"
 import { fetchUserCart } from "../../store/cart"
 import { getProducts } from "../../store/product"
+import { useHistory } from "react-router-dom"
 import CartPageItem from "../CartPageItem"
 import AllProductCarousel from "../Carousel/AllProductCarousel"
 import { fetchUserFavorite } from "../../store/favorite"
+import { removeCart } from "../../store/cart"
 import "./CartPage.css"
 
 const CartPage = () => {
     const dispatch = useDispatch()
+    const history = useHistory()
     const currentUser = useSelector(state => state.session ? state.session.user : null)
     const cart = useSelector(state => state.cart ? Object.values(state.cart) : [])
     const products = useSelector(state => state.products ? Object.values(state.products) : [])
     const randomizeProducts = products ? products.sort(() => Math.random() - 0.5).slice(0, 10) : []
 
 
-    const total = cart.reduce((acc, product) => acc += (product.price * product.quantity), 0)
+    const total = cart.reduce((acc, product) => acc += (product.price * product.quantity), 0).toLocaleString()
 
     useEffect(() => {
         dispatch(fetchUserCart(currentUser.id))
@@ -24,6 +27,19 @@ const CartPage = () => {
         dispatch(fetchUserFavorite(currentUser.id))
     }, [currentUser.id])
 
+    const handleCheckout = async () => {
+        try {
+            for (const product of cart) {
+                await dispatch(removeCart(product.id));
+            }
+            history.push({
+                pathname: "/confirmation",
+                state: { cart: cart }
+            });
+            window.location.reload()
+        } catch (error) {
+        }
+    };
 
     const cartInfo = cart.map((product,i) => <CartPageItem key={i} product={product}/>)
     const cartLength = cart.length
@@ -52,7 +68,7 @@ const CartPage = () => {
                         </div>
                         
                     </div>
-                    <button className="total-div-button">CHECKOUT</button>
+                    <button onClick={handleCheckout} className="total-div-button">CHECKOUT</button>
                 </div>
             </div>
 

@@ -13,6 +13,7 @@ const BrandShowPage = () => {
     const { brand } = useParams()
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         dispatch(getProducts())
         currentUser ? dispatch(fetchUserFavorite(currentUser.id)) : dispatch(() => 1)
     }, [])

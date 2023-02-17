@@ -27,6 +27,7 @@ const ProductIndexItem = (prop) => {
 
     const removeFavoriteClick = (e) => {
         e.preventDefault()
+        debugger
         dispatch(removeFavorite(prop.product.id))
         setHide(true)
         localStorage.setItem(`product_${prop.product.id}_hide`, false)
@@ -63,7 +64,7 @@ const ProductIndexItem = (prop) => {
                     <p className='each-product-brand'>{prop.product.brand}</p>
                     <p>{prop.product.style}</p>
                     <p>"{prop.product.name}"</p>
-                    <p>${prop.product.price}</p>
+                    <p>${prop.product.price.toLocaleString()}</p>
                 </div>
             </div>
         </>

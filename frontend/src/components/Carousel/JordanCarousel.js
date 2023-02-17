@@ -15,6 +15,7 @@ const JordanCarousel = ({jordans}) => {
             modules={[Navigation, A11y]}
             spaceBetween={0}
             slidesPerView={5}
+            slidesPerGroup={5} 
             navigation
         >
             {jordans.map((product, i) => {

@@ -11,6 +11,7 @@ const FavoriteShowPage = () => {
     const favorites = useSelector(state => state.favorites ? Object.values(state.favorites) : [])
     const length = favorites.length
     useEffect(() => {
+        window.scrollTo(0, 0);
         dispatch(fetchUserFavorite(currentUser.id))
     }, [currentUser.id, length])
 

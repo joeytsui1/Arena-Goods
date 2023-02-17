@@ -38,10 +38,12 @@ export const makeFavorite = (favorite) => async dispatch => {
 }
 
 export const removeFavorite = favoriteId => async dispatch => {
+    debugger
     await csrfFetch(`/api/favorites/${favoriteId}`, {
         method: "DELETE"
     })
     dispatch(deleteFavorite(favoriteId))
+
 }
 
 const favoriteReducer = (state = {}, action) => {

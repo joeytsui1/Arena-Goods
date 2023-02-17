@@ -5,7 +5,12 @@
     display: block;
     text-align: center;
     cursor: pointer;
-    margin-top: 30px;
+    width: 100%;
+}
+
+.each-product-item:hover {
+background: white;
+    box-shadow: 0 8px 8px -4px rgb(110, 110, 110);
 }
 
 .each-product-item > p {

@@ -1,7 +1,8 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Redirect } from "react-router-dom"
 import * as sessionActions from "../../store/session"
 import { useDispatch, useSelector } from "react-redux"
+import { getProducts } from "../../store/product"
 import "./SignUpFormPage.css"
 
 const SignUpForm = () => {
@@ -13,6 +14,9 @@ const SignUpForm = () => {
     const [errors, setErrors] = useState([])
     const currentUser = useSelector(state => state.session.user)
 
+    useEffect(() => {
+        dispatch(getProducts())
+    }, [])
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
@@ -20,10 +24,9 @@ const SignUpForm = () => {
             .catch(async (res) => {
                 let data;
                 try {
-                    // .clone() essentially allows you to read the response body twice
                     data = await res.clone().json();
                 } catch {
-                    data = await res.text(); // Will hit this case if the server is down
+                    data = await res.text();
                 }
                 if (data?.errors) setErrors(data.errors);
                 else if (data) setErrors([data]);
@@ -34,7 +37,7 @@ const SignUpForm = () => {
     const lastNameErrors = errors.find(error => error.includes("Last"))
     const emailErrors = errors.find(error => error.includes("Email"))
     const passwordErrors = errors.find(error => error.includes("Password"))
-    console.log(errors)
+
     return currentUser ? (<Redirect to="/"/>) : (
         <>
         <div className="signup-page">

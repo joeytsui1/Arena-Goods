@@ -57,7 +57,7 @@
 .footer-refer-p {
     display: block;
     text-align: center;
-    font-size: large;
+    font-size: medium;
     margin-top: -40px;
     margin-bottom: 30px;
 }
@@ -76,7 +76,7 @@
                 text-transform: uppercase;
                 background-color: rgb(19, 19, 19);
                 letter-spacing: 0.05em;
-                margin-left: 90px;
+                margin-left: 60px;
                 margin-bottom: 20px;
                 cursor: pointer;
 }

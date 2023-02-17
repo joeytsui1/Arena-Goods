@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/session";
-import { useHistory } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import logoImage from './images/logo.jpg'
 import "./NavBar.css"
@@ -33,11 +33,10 @@ const NavBar = () => {
         )
     }
 
-    const handleClick = (e) => {
-        e.preventDefault();
+    const handleClick = () => {
+        console.log(history)
         dispatch(logout());
         history.push("/login")
-
     }
 
     const uniqueBrands = [...new Set(products.filter(product => product.brand).map(product => product.brand))];

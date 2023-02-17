@@ -14,6 +14,7 @@ const AdidasCarousel = ({adidas2}) => {
             modules={[Navigation, A11y]}
             spaceBetween={0}
             slidesPerView={5}
+            slidesPerGroup={5} 
             navigation
         >
             {adidas2.map((product, i) => {

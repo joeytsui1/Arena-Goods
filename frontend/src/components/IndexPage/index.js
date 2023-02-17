@@ -7,7 +7,7 @@ import Carousel from "../Carousel/AllProductCarousel"
 import AdidasCarousel from "../Carousel/AdidasCarousel"
 import JordanCarousel from "../Carousel/JordanCarousel"
 import NikeCarousel from "../Carousel/NikeCarousel"
-import { fetchUserFavorite } from "../../store/favorite"
+
 
 
 const IndexPage = () => {
@@ -16,6 +16,7 @@ const IndexPage = () => {
     const products = useSelector(state => state.products ? Object.values(state.products) : [])
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         dispatch(getProducts())
     }, [])
 

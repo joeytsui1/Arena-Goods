@@ -1,0 +1,80 @@
+.confirmation-wrapper {
+    display: block;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.confirmation-header {
+    /* display: grid;
+    text-align: center; */
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.confirmation-header > h1 {
+    font-size: xx-large;
+    margin-bottom: 15px;
+}
+
+.confirmation-header > h2 {
+    font-size: large;
+    color: rgb(96, 94, 94);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.confirmation-product-detail {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 50px;
+}
+.confirmation-product-detail > p {
+    font-size: medium;
+    text-decoration: underline;
+}
+.confirmation-product-detail > div > p {
+    text-decoration: underline;
+}
+.c-inner-div {
+    display: flex;
+}
+.c-inner-div > p {
+    margin-right: 20px;
+    font-size: medium;
+}
+.confirmation-product-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 100px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.confirmation-product {
+    display: flex;
+}
+
+.c-inner-div2 {
+    display: flex;
+}
+
+.c-inner-div2 > p {
+    margin-right: 20px;
+    font-size: medium;
+    margin-top: 50px;
+}
+
+.confirmation-product > * {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.confirmation-image {
+    width: 200px;
+}
+
+.confirmation-total {
+    margin-left: 600px;
+}

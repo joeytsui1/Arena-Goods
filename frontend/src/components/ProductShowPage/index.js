@@ -23,6 +23,7 @@ const ProductShowPage = () => {
     const randomizeProducts = products ? products.sort(() => Math.random() - 0.5).slice(0, 10) : []
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         dispatch(getProduct(productId))
         dispatch(getProducts())
         currentUser ? dispatch(fetchUserFavorite(currentUser.id)) : dispatch(() => 1)

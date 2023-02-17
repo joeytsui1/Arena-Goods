@@ -9,8 +9,8 @@ const ProductIndex = () => {
     const products = useSelector(state => state.products ? Object.values(state.products) : [])
     
     useEffect(() => {
+        window.scrollTo(0, 0);
         dispatch(getProducts())
-
     }, [])
 
     if(products === undefined) {
