@@ -8,6 +8,7 @@ import { getProducts } from "../../store/product";
 import { fetchUserCart } from "../../store/cart";
 import { fetchUserFavorite } from "../../store/favorite";
 import { BsHeart } from 'react-icons/bs';
+import SearchModal from "../Modal/SearchModal";
 
 const NavBar = () => {
     const dispatch = useDispatch()
@@ -17,13 +18,19 @@ const NavBar = () => {
     const cart = useSelector(state => state.cart ? Object.values(state.cart) : [])
     const favorites = useSelector(state => state.favorites ? Object.values(state.favorites) : [] )
     const [isLoading, setLoading] = useState(true)
+    const [show, setShow] = useState(false) 
 
     useEffect(() => {
         dispatch(getProducts)
         currentUser ? dispatch(fetchUserCart(currentUser.id)) : dispatch(() => 1)
         currentUser ? dispatch(fetchUserFavorite(currentUser.id)) : dispatch(() => 1)
         setLoading(false)
-    }, [])
+        if (show) {
+            document.body.classList.add('modal-open');
+        } else {
+            document.body.classList.remove('modal-open');
+        }
+    }, [show])
 
     if (isLoading) {
         return (
@@ -79,7 +86,7 @@ const NavBar = () => {
 
 
     const searchButton = (
-            <svg className="nav-search-button" width="2rem" height="2rem" viewBox="0 0 16 17" >
+            <svg className="nav-search-button" onClick={() => setShow(true)} width="2rem" height="2rem" viewBox="0 0 16 17" >
                 <g fillRule="evenodd" clipRule="evenodd" fill="currentColor">
                     <path d="M11.0105 11.724C9.84375 12.7271 8.326 13.3333 6.66667 13.3333C2.98477 13.3333 0 10.3486 0 6.66667C0 2.98477 2.98477 0 6.66667 0C10.3486 0 13.3333 2.98477 13.3333 6.66667C13.3333 8.32929 12.7247 9.84975 11.7181 11.0174L15.9969 15.2962L15.2898 16.0033L11.0105 11.724ZM12.3333 6.66667C12.3333 9.79628 9.79628 12.3333 6.66667 12.3333C3.53705 12.3333 1 9.79628 1 6.66667C1 3.53705 3.53705 1 6.66667 1C9.79628 1 12.3333 3.53705 12.3333 6.66667Z"></path>
                 </g>
@@ -89,7 +96,7 @@ const NavBar = () => {
     return (
         <>
             <header >
-
+                
                 <div className="logo-div"><img className="logo" src={logoImage} onClick={redirectHome}  /></div>
                 <div className="user-funcs">
                     {currentUser ? <p className="name">Hello, {currentUser.first}!</p> : null }
@@ -102,6 +109,7 @@ const NavBar = () => {
                     {loginButton}
                     {heartButton}
                     {cartButton}
+                    {<SearchModal onClose={() => setShow(false)} show={show}/>}
                 </div>
             </header>
             <nav className="second-nav">

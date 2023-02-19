@@ -53,3 +53,76 @@
 .update-modal > button {
     font-size: small;
 }
+
+
+.search-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+}
+
+.search-modal-content {
+    width: 100%;
+    height: 500px;
+    background-color: rgb(250, 250, 250);
+    padding: 0px 600px 0px 600px;
+}
+
+.search-modal-body > input {
+    width: 99%;
+    height: 30px;
+    margin-top: 40px;
+}
+.search-modal-body>input:focus {
+    outline: none !important;
+    border: 1px solid black;
+}
+
+.search-modal-body > p {
+    font-size: medium;
+}
+
+
+.search-modal-body {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.fa-search {
+    color: #333;
+    font-size: 16px;
+    border: 1px solid ;
+    padding: 11px;
+}
+
+.others > p {
+    font-size: medium;
+}
+
+.search-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-links > a {
+    font-size: medium;
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+
+.button {
+    position: absolute;
+    top: 20px;
+}
+
+
+.button > * {
+    cursor: pointer;
+}

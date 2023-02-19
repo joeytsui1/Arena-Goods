@@ -25,7 +25,7 @@ function App() {
       <Route path="/brands/:brand" component={BrandShowPage} />
       <Route exact path="/"><IndexPage /></Route>
       <Route exact path="/cart"><CartPage/></Route>
-      <Route path="/confirm"><ConfirmationPage/></Route>
+      <Route path="/confirmation"><ConfirmationPage/></Route>
       <Route exact path="/favorites"><FavoriteShowPage/></Route>
       <Route exact path="/login"><LoginFormPage /></Route>
       <Route path="*" component={ErrorPage} />

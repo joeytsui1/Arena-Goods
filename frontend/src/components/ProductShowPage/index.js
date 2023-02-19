@@ -74,7 +74,7 @@ const ProductShowPage = () => {
                 <a href={`/brands/${product.brand.toLowerCase()}`}>{product.brand}</a>
                 <h1>{product.style}</h1>
                 <span>"{product.name}"</span>
-                <span>${product.price}</span>
+                    <span>${product.price.toLocaleString()}</span>
                 <div className="checkout-box">
                     <p>🇺🇸 US Men sizes displayed </p>
                         <button className="size-option" onClick={handleClick}>

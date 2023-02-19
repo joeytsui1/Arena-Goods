@@ -9,7 +9,7 @@ header {
     position: sticky;
     top: 0px;
     height: 100%;
-    z-index: 3;
+    z-index: 1;
 }
 .logo-div{
     display: flex;
@@ -80,7 +80,7 @@ header {
 
 
 .cart-length-number {
-    top: 1.1%;
+    top: 16%;
     left: 96.8%;
     position: absolute;
     background-color: black;
@@ -96,7 +96,7 @@ header {
 }
 
 .follow-number {
-    top: 1.1%;
+    top: 16%;
     left: 94.5%;
     position: absolute;
     background-color: black;

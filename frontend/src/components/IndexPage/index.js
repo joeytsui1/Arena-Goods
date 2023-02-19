@@ -51,19 +51,21 @@ const IndexPage = () => {
                 <Carousel randomizeProducts={randomizeProducts}/>
             </div>
 
-            <div>
-                <div className="carousel-div">
-                    <h1>Jordan</h1>
-                    <a href="/brands/jordan">SHOP ALL JORDAN</a>
-                </div>
-                <JordanCarousel jordans={jordans} />
-            </div>
+
             <div>
                 <div className="carousel-div">
                     <h1>Nike</h1>
                     <a href="/brands/nike">SHOP ALL NIKE</a>
                 </div>
                 <NikeCarousel nikes={nikes} />
+            </div>
+
+            <div>
+                <div className="carousel-div">
+                    <h1>Jordan</h1>
+                    <a href="/brands/jordan">SHOP ALL JORDAN</a>
+                </div>
+                <JordanCarousel jordans={jordans} />
             </div>
             <div>
                 <div className="carousel-div">
