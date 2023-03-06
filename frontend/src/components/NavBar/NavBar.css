@@ -4,6 +4,7 @@ header {
     align-items: center;
     background-color: rgb(250, 250, 250);
     min-height: 3.5rem;
+    min-width: 1000px;
     padding-left: 45px;
     padding-right: 45px;
     position: sticky;

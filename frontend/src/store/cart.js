@@ -40,7 +40,6 @@ export const fetchCart = () => async dispatch => {
 }
 
 export const makeCart = (cart) => async dispatch => {
-    // debugger
     const {user_id, product_id, quantity, size} = cart
     const res = await csrfFetch('/api/carts', {
         method: "POST",

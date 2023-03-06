@@ -57,8 +57,7 @@ const Modal = prop => {
     
     const text = size ? `US Size ${size}` : "Select A Size"
     const text2 = quantity ? `Quantity: ${quantity}` : "Quantity: 1"
-    // console.log(size)
-    console.log(quantity)
+
     return (
         <div className="modal" onClick={prop.onClose}>
             <div className="modal-content" onClick={e => e.stopPropagation()}> 
