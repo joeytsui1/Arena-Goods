@@ -82,8 +82,6 @@ function LoginFormPage() {
 
                 <br />
                 <div className="extra-links-login">
-                    <a className="login-forgotpassword" href="#">Forgot Password?</a>
-                    <span className="span"> | </span>
                     <a className="login-signup-link" href="/signup">Create an Account</a>
                 </div>
             </div>

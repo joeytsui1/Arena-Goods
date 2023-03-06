@@ -9,14 +9,13 @@ const CartPageItem = (prop) => {
     const dispatch = useDispatch()
     const history = useHistory()
     const [show, setShow] = useState(false)
-    console.log(prop)
+
     useEffect(() => {
         if (show) {
             document.body.classList.add('modal-open');
         } else {
             document.body.classList.remove('modal-open');
         }
-
     }, [show])
     
     const deleteOnClick = (e) => {

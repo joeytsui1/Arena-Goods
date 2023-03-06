@@ -11,20 +11,20 @@ class Api::CartsController < ApplicationController
     end
 
     def create
-        # debugger
-        @cart = Cart.find_by(user_id: params[:user_id], product_id: params[:product_id], size: params[:size])
-        # debugger
+    @cart = Cart.find_by(user_id: params[:user_id], product_id: params[:product_id], size: params[:size])
         if @cart
-            # debugger
-            @cart.quantity += 1 
+            @cart.quantity += 1
             @cart.save!
         else
             @cart = Cart.new(carts_params)
-            @cart.save!
+            unless @cart.save
+                render json: { errors: ["Invalid login credentials, please correct your email address/password and submit again"] }, status: :unprocessable_entity
+            return
+            end
         end
+
         @user = User.find(params[:user_id])
         @cart = Cart.where(user_id: @user[:id])
-        # debugger
         render :show
     end
 

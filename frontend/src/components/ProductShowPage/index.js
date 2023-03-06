@@ -54,9 +54,16 @@ const ProductShowPage = () => {
             user_id: currentUser.id,
             product_id: product.id,
             size: size
+        };
+
+        try {
+            dispatch(makeCart(cart_item));
+        } catch (error) {
+            console.error(error);
+            // handle the error here
         }
-        dispatch(makeCart(cart_item))
-    }
+    };
+
     const text = size ? `US Size ${size}` : "Select A Size"
     return (
         <>
