@@ -11,7 +11,9 @@ const ProductIndexItem = (prop) => {
     const history = useHistory()
     const dispatch = useDispatch()
     const currentUser = useSelector(state => state.session.user)
-    const [hide, setHide] = useState(localStorage.getItem(`product_${prop.product.id}_hide`) === 'true' || true)
+    const [hide, setHide] = useState(false)
+
+    console.log(prop.favorites)
 
     const addFavoriteClick = (e) => {
         e.preventDefault()
@@ -20,17 +22,14 @@ const ProductIndexItem = (prop) => {
             product_id: prop.product.id
         }
         dispatch(makeFavorite(product))
-        setHide(false)
-        localStorage.setItem(`product_${prop.product.id}_hide`, true)
-        
+        setHide(true)
     }
 
     const removeFavoriteClick = (e) => {
         e.preventDefault()
         
         dispatch(removeFavorite(prop.product.id))
-        setHide(true)
-        localStorage.setItem(`product_${prop.product.id}_hide`, false)
+        setHide(false)
         window.location.reload()
     }
 
@@ -57,7 +56,7 @@ const ProductIndexItem = (prop) => {
         <>
             <div >
                 <div className="fix-this-shit">
-                    {localStorage.getItem(`product_${prop.product.id}_hide`) === "true" ? fillHeartIcon() : heartIcon()}
+                    {hide ? fillHeartIcon() : heartIcon()}
                 </div>
                 <div className="each-product-item" onClick={handleClick}>
                     <img className="each-product-img" src={prop.product.image} />

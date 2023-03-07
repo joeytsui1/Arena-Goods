@@ -17,14 +17,12 @@ const NavBar = () => {
     const products = useSelector(state => state.products ? Object.values(state.products) : [])
     const cart = useSelector(state => state.cart ? Object.values(state.cart) : [])
     const favorites = useSelector(state => state.favorites ? Object.values(state.favorites) : [] )
-    // const [isLoading, setLoading] = useState(true)
     const [show, setShow] = useState(false) 
 
     useEffect(() => {
         dispatch(getProducts)
         currentUser ? dispatch(fetchUserCart(currentUser.id)) : dispatch(() => 1)
         currentUser ? dispatch(fetchUserFavorite(currentUser.id)) : dispatch(() => 1)
-        // setLoading(false)
         if (show) {
             document.body.classList.add('modal-open');
         } else {
@@ -32,17 +30,9 @@ const NavBar = () => {
         }
     }, [show])
 
-    // if (isLoading) {
-    //     return (
-    //         <>
-    //             still loading..
-    //         </>
-    //     )
-    // }
-
-    const handleClick = () => {
-        dispatch(logout());
-        history.push("/login")
+    const handleClick = async () => {
+        await dispatch(logout());
+        history.push("/login");
     }
 
     const uniqueBrands = [...new Set(products.filter(product => product.brand).map(product => product.brand))];

@@ -1,5 +1,5 @@
 @favorite.each do |favorite|
-    json.set! favorite.id do
+    json.set! favorite.product.id do
         json.id favorite.product.id
         json.name favorite.product.name
         json.brand favorite.product.brand

@@ -3,14 +3,17 @@ import { useEffect } from "react"
 import { getProducts } from "../../store/product"
 import ProductIndexItem from "../ProductIndexItem"
 import "./ProductIndex.css"
+import { fetchUserFavorite } from "../../store/favorite"
 
 const ProductIndex = () => {
     const dispatch = useDispatch() 
     const products = useSelector(state => state.products ? Object.values(state.products) : [])
-    
+    const favorites = useSelector(state => state.favorites ? Object.values(state.favorites) : [])
+
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(getProducts())
+        dispatch(fetchUserFavorite)
     }, [])
 
     if(products === undefined) {
@@ -19,8 +22,9 @@ const ProductIndex = () => {
         )
     }
 
-    const productDiv = products.map(product => <ProductIndexItem key={product.id} product={product}/>)
+    const productDiv = products.map(product => <ProductIndexItem key={product.id} product={product} favorites={favorites}/>)
     const result = productDiv.length
+    
     return (
         <>
             <div className="brand-div">
