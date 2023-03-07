@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/session";
-import { Redirect, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import logoImage from './images/logo.jpg'
 import "./NavBar.css"
@@ -92,7 +92,7 @@ const NavBar = () => {
                     <p>|</p>
                     <a href="https://github.com/joeytsui1">Github</a>
                     <a href="https://www.linkedin.com/in/joey-tsui-5836a2240/">Linkedin</a>
-                    <p>AngelLink</p>
+                    <p>Wellfound</p>
                     <p>|</p>
                     {searchButton}
                     {loginButton}
@@ -105,7 +105,7 @@ const NavBar = () => {
                 {uniqueBrands.map((brand, i) => <a className="second-nav-p" key={i} href={`/brands/${brand.toLowerCase()}`}>{brand}</a>)}
                 <a className="second-nav-p" href="https://github.com/joeytsui1">GITHUB</a>
                 <a className="second-nav-p" href="https://www.linkedin.com/in/joey-tsui-5836a2240/">LINKEDIN</a>
-                <a className="second-nav-p" href="#">ANGELINK</a>
+                <a className="second-nav-p" href="#">WELLFOUND</a>
                 <a className="second-nav-p" href="/products">ALL BRANDS</a>
             </nav>
         </>

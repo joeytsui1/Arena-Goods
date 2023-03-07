@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 import { useEffect, useState } from "react"
 import { fetchUserCart } from "../../store/cart"
 import { getProducts } from "../../store/product"
-import { useHistory } from "react-router-dom"
+import { Redirect, useHistory } from "react-router-dom"
 import CartPageItem from "../CartPageItem"
 import AllProductCarousel from "../Carousel/AllProductCarousel"
 import { fetchUserFavorite } from "../../store/favorite"
@@ -25,7 +25,7 @@ const CartPage = () => {
         dispatch(fetchUserCart(currentUser.id))
         dispatch(getProducts())
         dispatch(fetchUserFavorite(currentUser.id))
-    }, [currentUser.id])
+    }, [])
 
     const handleCheckout = async () => {
         try {
@@ -44,7 +44,7 @@ const CartPage = () => {
     const cartInfo = cart.map((product,i) => <CartPageItem key={i} product={product}/>)
     const cartLength = cart.length
     
-    return (
+    return !currentUser ? <Redirect to='/login'/> : (
         <>
             <h1 className="checkout-header">{`Shopping Cart (${cartLength})`}</h1>
             <div className="checkout-wrapper">

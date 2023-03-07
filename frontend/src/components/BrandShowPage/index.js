@@ -44,7 +44,9 @@ const BrandShowPage = () => {
 
     const filtered = products.filter(product => product.brand.toLowerCase().includes(brand))
     const productDiv = filtered.map(product => <ProductIndexItem key={product.id} product={product} />)
+    
     const result = productDiv.length
+
     if (products === undefined) {
         return (
             <>still loading...</>

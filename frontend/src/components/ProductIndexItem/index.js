@@ -4,16 +4,13 @@ import { BsHeart, BsHeartFill } from 'react-icons/bs'
 import { makeFavorite, removeFavorite } from '../../store/favorite'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
-import { useEffect, useState } from 'react'
 
 const ProductIndexItem = (prop) => {
 
     const history = useHistory()
     const dispatch = useDispatch()
+    const favorites = useSelector(state => state.favorites ? state.favorites : {})
     const currentUser = useSelector(state => state.session.user)
-    const [hide, setHide] = useState(false)
-
-    console.log(prop.favorites)
 
     const addFavoriteClick = (e) => {
         e.preventDefault()
@@ -22,15 +19,11 @@ const ProductIndexItem = (prop) => {
             product_id: prop.product.id
         }
         dispatch(makeFavorite(product))
-        setHide(true)
     }
 
     const removeFavoriteClick = (e) => {
         e.preventDefault()
-        
         dispatch(removeFavorite(prop.product.id))
-        setHide(false)
-        window.location.reload()
     }
 
     const redirectLogin = () => {
@@ -56,7 +49,7 @@ const ProductIndexItem = (prop) => {
         <>
             <div >
                 <div className="fix-this-shit">
-                    {hide ? fillHeartIcon() : heartIcon()}
+                    {favorites[prop.product.id] ? fillHeartIcon() : heartIcon()}
                 </div>
                 <div className="each-product-item" onClick={handleClick}>
                     <img className="each-product-img" src={prop.product.image} />
