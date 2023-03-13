@@ -21,6 +21,6 @@
     display: flex;
     justify-content: flex-end;
     width: 120px;
-    margin-left: 270px;
+    /* margin-left: 235px; */
     cursor: pointer;
 }
