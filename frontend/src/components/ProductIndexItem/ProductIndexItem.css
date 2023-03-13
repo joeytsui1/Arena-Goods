@@ -1,5 +1,6 @@
 .each-product-img{
-    width: 350px;
+    /* width: 350px; */
+    width: 100%;
 }
 .each-product-item{
     display: block;
@@ -21,6 +22,5 @@
     display: flex;
     justify-content: flex-end;
     width: 120px;
-    /* margin-left: 235px; */
     cursor: pointer;
 }

@@ -11,7 +11,7 @@ const JordanCarousel = ({jordans}) => {
     return (
 
         <Swiper
-            style={{ width: "1700px", height: "500px", zIndex: "0" }}
+            style={{ width: "100%", height: "100%", zIndex: "0" }}
             modules={[Navigation, A11y]}
             spaceBetween={0}
             slidesPerView={5}
