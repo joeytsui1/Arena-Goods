@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import { useSelector } from "react-redux"
 import { fetchUserFavorite } from "../../store/favorite"
 import { useDispatch } from "react-redux"
@@ -11,6 +11,8 @@ const FavoriteShowPage = () => {
     const currentUser = useSelector(state => state.session ? state.session.user : null)
     const favorites = useSelector(state => state.favorites ? Object.values(state.favorites) : [])
     const length = favorites.length
+
+    
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(fetchUserFavorite(currentUser.id))
@@ -26,7 +28,6 @@ const FavoriteShowPage = () => {
             <div className="index-product-div">
                 {ProductDiv}
             </div>
-
         </>
     )
 }
