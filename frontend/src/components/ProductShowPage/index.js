@@ -105,7 +105,9 @@ const ProductShowPage = () => {
                         </div>
                     </>
                      }
-                    <button onClick={currentUser ? addToCart : redirectLogin}className="add-to-cart">ADD TO CART</button>
+                    <button onClick={currentUser ? addToCart : redirectLogin} className="add-to-cart" disabled={!size}>
+                        ADD TO CART
+                    </button>
                 </div>
             </div>
         </div>

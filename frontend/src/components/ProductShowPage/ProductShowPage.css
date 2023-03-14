@@ -133,6 +133,11 @@
     background-color: rgb(74, 72, 72);
 }
 
+.add-to-cart:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
 .product-info-div{
 border: 1px solid lightgray;
     display: flex;

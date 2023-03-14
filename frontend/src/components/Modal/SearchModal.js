@@ -7,6 +7,7 @@ const SearchModal = (props) => {
     if (!props.show) {
         return null
     }
+    
     return (
         <>
             <div className="search-modal" onClick={props.onClose}>
