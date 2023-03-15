@@ -59,17 +59,24 @@ const NavBar = () => {
 
     const cartButton = (
         <>
+        <div>
         <svg className="nav-cart-button" onClick={currentUser ? () => history.push("/cart") : redirectLogin}>
             <path d="M16 6.5H13.5V5C13.5 2.243 11.257 0 8.5 0C5.743 0 3.5 2.243 3.5 5V6.5H1C0.724 6.5 0.5 6.724 0.5 7V19.5C0.5 19.776 0.724 20 1 20H16C16.276 20 16.5 19.776 16.5 19.5V7C16.5 6.724 16.276 6.5 16 6.5ZM4.5 5C4.5 2.7945 6.2945 1 8.5 1C10.7055 1 12.5 2.7945 12.5 5V6.5H4.5V5ZM1.5 7.5H3.5V9.5C3.5 9.776 3.724 10 4 10C4.276 10 4.5 9.776 4.5 9.5V7.5H12.5V9.5C12.5 9.776 12.724 10 13 10C13.276 10 13.5 9.776 13.5 9.5V7.5H15.5V16H1.5V7.5ZM15.5 19H1.5V17H15.5V19Z" fill="currentColor"></path>
         </svg>
-            {heartNum}
+            {num}
+            
+        </div>
+
         </>
     )
 
     const heartButton = (
         <>
-            <div className="heart" onClick={currentUser ? () => history.push("/favorites") : redirectLogin}><BsHeart /></div>
-            {num}
+            <div className="heart" onClick={currentUser ? () => history.push("/favorites") : redirectLogin}>
+                <BsHeart />
+                {heartNum}
+            </div>
+            
         </>
     )
 

@@ -1,13 +1,35 @@
 import './modal.css'
 import logoImage from "./images/logo.jpg"
 import { GrClose } from "react-icons/gr"
+import { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 const SearchModal = (props) => {
 
+    const [search, setSearch] = useState("")
+    const history = useHistory()
     if (!props.show) {
         return null
     }
     
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        history.push('/products')
+        props.onClose()
+    }
+
+    const handleChange = (e) => {
+        e.preventDefault()
+        setSearch(e.target.value)
+    }
+
+    const handleKeyDown = (event) => {
+        if (event.keyCode === 13) {
+            handleSubmit(event);
+        }
+    };
+
+
     return (
         <>
             <div className="search-modal" onClick={props.onClose}>
@@ -16,7 +38,10 @@ const SearchModal = (props) => {
                     <div className="search-modal-body">
                         <div className='button'><GrClose onClick={props.onClose} style={{ width: "2200px" }} /></div>
                         <img className='logo' src={logoImage}></img>
-                        <input type="text" placeholder={`Search Arena Goods`}></input>
+                        <form>
+                            <input type="text" placeholder={`Search Arena Goods`} onChange={handleChange} onKeyDown={handleKeyDown}></input>
+                        </form>
+                        
                         <p>Hit enter to see results</p>
                     </div>
                     <div className='others'>

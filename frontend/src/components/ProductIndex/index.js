@@ -8,21 +8,14 @@ import { fetchUserFavorite } from "../../store/favorite"
 const ProductIndex = () => {
     const dispatch = useDispatch() 
     const products = useSelector(state => state.products ? Object.values(state.products) : [])
-    const favorites = useSelector(state => state.favorites ? state.favorites : {})
+    // const favorites = useSelector(state => state.favorites ? state.favorites : {})
 
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(getProducts())
-        dispatch(fetchUserFavorite())
     }, [])
 
-    if(products === undefined) {
-        return (
-            <>Still Loading</>
-        )
-    }
-
-    const productDiv = products.map(product => <ProductIndexItem key={product.id} product={product} favorites={favorites}/>)
+    const productDiv = products.map(product => <ProductIndexItem key={product.id} product={product}/>)
     const result = productDiv.length
     return (
         <>

@@ -77,39 +77,38 @@ header {
 
 .heart {
     cursor: pointer;
+    margin-right: 25px;
 }
 
 
 .cart-length-number {
-    top: 16%;
-    left: 96.8%;
     position: absolute;
-    background-color: black;
-    width: 14px;
-    height: 14px;
-    color: white;
-    border-radius: 50% 50% 50% 50%;
-    font-size: xx-small;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
+        top: 11px;
+        right: 40px;
+        background-color: black;
+        color: white;
+        border-radius: 50%;
+        width: 14px;
+        height: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: xx-small;
 }
 
 .follow-number {
-    top: 16%;
-    left: 94.5%;
     position: absolute;
+    top: 11px;
+    right: 83px;
     background-color: black;
+    color: white;
+    border-radius: 50%;
     width: 14px;
     height: 14px;
-    color: white;
-    border-radius: 50% 50% 50% 50%;
-    font-size: xx-small;
     display: flex;
-    flex-direction: column;
-    text-align: center;
     justify-content: center;
+    align-items: center;
+    font-size: xx-small;
 }
 
 svg {
@@ -122,5 +121,5 @@ svg {
 }
 
 .heart {
-    margin-right: 25px;
+
 }
