@@ -5,7 +5,7 @@ class Api::ProductsController < ApplicationController
             @products = Product.all
             render :index
         else
-            @products = Product.where(brand: "NIKE")
+            @products = Product.where(brand: search.upcase).or(Product.where("style ILIKE ?", "%#{search}%")).or(Product.where("name ILIKE ?", "%#{search}%"))
             render :index
         end
 

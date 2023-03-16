@@ -18,7 +18,7 @@ const SearchModal = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(getProducts(search))
-        history.push("/search")
+        search === "" ? history.push('/products') : history.push(`/search/${search}`) 
         props.onClose()
     }
 

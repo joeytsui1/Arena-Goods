@@ -24,7 +24,7 @@ function App() {
       <Route exact path="/products"><ProductIndex /></Route>
       <Route path="/products/:productId" component={ProductShowPage} />
       <Route path="/brands/:brand" component={BrandShowPage} />
-      <Route path="/search" component={SearchPage}/>
+      <Route path="/search/:search" component={SearchPage}/>
       <Route exact path="/"><IndexPage /></Route>
       <Route exact path="/cart"><CartPage/></Route>
       <Route path="/confirmation"><ConfirmationPage/></Route>
