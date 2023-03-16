@@ -35,8 +35,6 @@ const NavBar = () => {
         history.push("/login");
     }
 
-    const uniqueBrands = [...new Set(products.filter(product => product.brand).map(product => product.brand))];
-
     const nums = cart.reduce((acc, product) => (acc += product.quantity), 0)
     const numss = favorites.length
 
@@ -108,9 +106,12 @@ const NavBar = () => {
                     {<SearchModal onClose={() => setShow(false)} show={show}/>}
                 </div>
             </header>
-            <nav className="second-nav">
-                {uniqueBrands.map((brand, i) => <a className="second-nav-p" key={i} href={`/brands/${brand.toLowerCase()}`}>{brand}</a>)}
-                <a className="second-nav-p" href="https://github.com/joeytsui1">GITHUB</a>
+            <nav className="second-nav">                
+                <a className="second-nav-p" href="/brands/jordan">JORDAN</a>
+                <a className="second-nav-p" href="/brands/nike">NIKE</a>
+                <a className="second-nav-p" href="/brands/adidas">ADIDAS</a>
+                <a className="second-nav-p" href="/brands/new-balance">NEW-BALANCE</a>
+                <a className="second-nav-p" href="/brands/asics">ASICS</a>
                 <a className="second-nav-p" href="https://www.linkedin.com/in/joey-tsui-5836a2240/">LINKEDIN</a>
                 <a className="second-nav-p" href="#">WELLFOUND</a>
                 <a className="second-nav-p" href="/products">ALL BRANDS</a>

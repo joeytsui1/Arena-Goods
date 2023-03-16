@@ -1,16 +1,12 @@
-import { useDispatch, useSelector } from "react-redux"
-import { useEffect } from "react"
-import { getProducts } from "../../store/product"
-import ProductIndexItem from "../ProductIndexItem"
-import "./ProductIndex.css"
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import ProductIndexItem from "../ProductIndexItem";
 
-const ProductIndex = () => {
-    const dispatch = useDispatch() 
+const SearchPage = () => {
     const products = useSelector(state => state.products ? Object.values(state.products) : [])
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        dispatch(getProducts(""))
     }, [])
 
     const productDiv = products.map(product => <ProductIndexItem key={product.id} product={product}/>)
@@ -33,4 +29,4 @@ const ProductIndex = () => {
     )
 }
 
-export default ProductIndex
+export default SearchPage

@@ -12,6 +12,7 @@ import ErrorPage from './components/ErrorPage';
 import CartPage from './components/CartPage';
 import FavoriteShowPage from './components/FavoriteShowPage';
 import ConfirmationPage from './components/ConfirmationPage';
+import SearchPage from './components/SearchPage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route exact path="/products"><ProductIndex /></Route>
       <Route path="/products/:productId" component={ProductShowPage} />
       <Route path="/brands/:brand" component={BrandShowPage} />
+      <Route path="/search" component={SearchPage}/>
       <Route exact path="/"><IndexPage /></Route>
       <Route exact path="/cart"><CartPage/></Route>
       <Route path="/confirmation"><ConfirmationPage/></Route>

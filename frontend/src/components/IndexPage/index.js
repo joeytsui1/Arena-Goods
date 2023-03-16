@@ -17,7 +17,7 @@ const IndexPage = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        dispatch(getProducts())
+        dispatch(getProducts(""))
     }, [])
 
     const handleClick = (e) => {

@@ -1,7 +1,14 @@
 class Api::ProductsController < ApplicationController
     def index
-        @products = Product.all
-        render :index
+        search = params[:search]
+        if search == ''
+            @products = Product.all
+            render :index
+        else
+            @products = Product.where(brand: "NIKE")
+            render :index
+        end
+
     end
 
     def show

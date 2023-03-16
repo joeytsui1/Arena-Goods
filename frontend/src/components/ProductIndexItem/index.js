@@ -56,7 +56,7 @@ const ProductIndexItem = (prop) => {
                     <p className='each-product-brand'>{prop.product.brand}</p>
                     <p>{prop.product.style}</p>
                     <p>"{prop.product.name}"</p>
-                    <p>${prop.product.price.toLocaleString()}</p>
+                    <p>${prop.product.price?.toLocaleString()}</p>
                 </div>
             </div>
         </>

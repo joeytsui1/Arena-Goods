@@ -14,7 +14,7 @@ const BrandShowPage = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        dispatch(getProducts())
+        dispatch(getProducts(""))
         currentUser ? dispatch(fetchUserFavorite(currentUser.id)) : dispatch(() => 1)
     }, [])
 
@@ -44,7 +44,7 @@ const BrandShowPage = () => {
 
     const filtered = products.filter(product => product.brand.toLowerCase().includes(brand))
     const productDiv = filtered.map(product => <ProductIndexItem key={product.id} product={product} />)
-    
+
     const result = productDiv.length
 
     if (products === undefined) {

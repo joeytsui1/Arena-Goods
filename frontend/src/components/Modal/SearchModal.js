@@ -2,11 +2,14 @@ import './modal.css'
 import logoImage from "./images/logo.jpg"
 import { GrClose } from "react-icons/gr"
 import { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { Redirect, useHistory } from 'react-router-dom'
+import { getProducts } from "../../store/product"
+import { useDispatch } from 'react-redux'
 
 const SearchModal = (props) => {
 
     const [search, setSearch] = useState("")
+    const dispatch = useDispatch()
     const history = useHistory()
     if (!props.show) {
         return null
@@ -14,7 +17,8 @@ const SearchModal = (props) => {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        history.push('/products')
+        dispatch(getProducts(search))
+        history.push("/search")
         props.onClose()
     }
 
