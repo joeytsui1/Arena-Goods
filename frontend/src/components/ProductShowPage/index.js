@@ -25,14 +25,10 @@ const ProductShowPage = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(getProduct(productId))
-        dispatch(getProducts())
+        dispatch(getProducts(""))
         currentUser ? dispatch(fetchUserFavorite(currentUser.id)) : dispatch(() => 1)
         currentUser ? dispatch(fetchUserCart(currentUser.id)) : dispatch(() => 1)
     }, [dispatch, productId, size, cart.length])
-
-    if (product === undefined) {
-        return <>Still loading...</>;
-    }
 
     const handleClick = (e) => {
         e.preventDefault()

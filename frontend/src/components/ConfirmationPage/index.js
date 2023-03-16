@@ -1,18 +1,14 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { getProducts } from "../../store/product";
-import { useDispatch } from "react-redux";
 import EachItem from "./EachItem";
 import "./ConfirmationPage.css"
 
 const ConfirmationPage = () => {
-    const dispatch = useDispatch()
     const location = useLocation();
     const cart = location.state.cart;
     const confirmationNumber = Math.floor(Math.random() * 100000000);
 
     useEffect(() => {
-        dispatch(getProducts())
         window.scrollTo(0, 0);
     }, [])
 
