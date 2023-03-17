@@ -80,3 +80,47 @@
                 margin-bottom: 20px;
                 cursor: pointer;
 }
+
+.bottom-footer{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.link-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me {
+    margin-top: 20px;
+    font-size: medium;
+}
+
+.footer-h1 {
+    font-weight: 500;
+    font-size: large;
+}
+
+.p-tag {
+    margin-top: 20px;
+    font-size: medium;
+}
+
+.social-icon{
+    height: 25px;
+    width: 25px;
+    margin-top: 20px;
+}
+
+.last {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.last > p {
+    font-size: medium;
+}

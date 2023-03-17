@@ -95,9 +95,9 @@ const NavBar = () => {
                 <div className="user-funcs">
                     {currentUser ? <p className="name">Hello, {currentUser.first}!</p> : null }
                     <p>|</p>
-                    <a href="https://github.com/joeytsui1">Github</a>
-                    <a href="https://www.linkedin.com/in/joey-tsui-5836a2240/">Linkedin</a>
-                    <p>Wellfound</p>
+                    <a href="https://github.com/joeytsui1" target="_blank">Github</a>
+                    <a href="https://www.linkedin.com/in/joey-tsui-5836a2240/" target="_blank">Linkedin</a>
+                    <a href="https://wellfound.com/u/joey-tsui" target="_blank">Wellfound</a>
                     <p>|</p>
                     {searchButton}
                     {loginButton}
@@ -112,8 +112,9 @@ const NavBar = () => {
                 <a className="second-nav-p" href="/brands/adidas">ADIDAS</a>
                 <a className="second-nav-p" href="/brands/new-balance">NEW-BALANCE</a>
                 <a className="second-nav-p" href="/brands/asics">ASICS</a>
-                <a className="second-nav-p" href="https://www.linkedin.com/in/joey-tsui-5836a2240/">LINKEDIN</a>
-                <a className="second-nav-p" href="#">WELLFOUND</a>
+                <a className="second-nav-p" href="https://github.com/joeytsui1" target="_blank">GITHUB</a>
+                <a className="second-nav-p" href="https://www.linkedin.com/in/joey-tsui-5836a2240/" target="_blank">LINKEDIN</a>
+                <a className="second-nav-p" href="https://wellfound.com/u/joey-tsui" target="_blank">WELLFOUND</a>
                 <a className="second-nav-p" href="/products">ALL BRANDS</a>
             </nav>
         </>

@@ -23,7 +23,7 @@ const CartPage = () => {
 
     useEffect(() => {
         dispatch(fetchUserCart(currentUser.id))
-        dispatch(getProducts())
+        dispatch(getProducts(""))
         dispatch(fetchUserFavorite(currentUser.id))
     }, [])
 
@@ -36,7 +36,6 @@ const CartPage = () => {
                 pathname: "/confirmation",
                 state: { cart: cart }
             });
-            window.location.reload()
         } catch (error) {
         }
     };
