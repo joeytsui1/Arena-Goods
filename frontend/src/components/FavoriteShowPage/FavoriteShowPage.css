@@ -1,11 +1,20 @@
 .favorites-header {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-top: 50px;
-    margin-bottom: -40px;
+    align-items: center;
+    height: 150px;
+    margin-top: 20px;
+    margin-bottom: -100px;
 }
 
 .favorites-header > h1 {
     font-size: x-large;
     font-weight: 700;
+}
+
+.empty-favorites{ 
+    font-size: x-large;
+    font-weight: 700;
+    margin-top: 50px;
 }

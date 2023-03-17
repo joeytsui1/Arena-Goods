@@ -24,6 +24,7 @@ const FavoriteShowPage = () => {
         <>
             <div className="favorites-header">
                 <h1>{`Favorites (${length})`}</h1>
+                {favorites.length === 0 ? <h2 className="empty-favorites">Your Favorites is Empty!</h2> : null}
             </div>
             <div className="index-product-div">
                 {ProductDiv}

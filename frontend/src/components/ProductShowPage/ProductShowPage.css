@@ -86,7 +86,7 @@
 
 .size-option {
     border: 1px solid lightgray;
-    width: 95%;
+    width: 94%;
     margin-top: 15px;
     margin-left: 15px;
     padding-top: 15px;
@@ -103,7 +103,7 @@
 }
 .size-inner-option {
     border: 1px solid lightgray;
-    width: 101.2%;
+    width: 100%;
     height: 47px;
     font-weight:bolder;
     font-size: medium;
