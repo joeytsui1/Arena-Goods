@@ -36,6 +36,7 @@ const CartPage = () => {
                 pathname: "/confirmation",
                 state: { cart: cart }
             });
+            window.location.reload()
         } catch (error) {
         }
     };
@@ -46,6 +47,7 @@ const CartPage = () => {
     return !currentUser ? <Redirect to='/login'/> : (
         <>
             <h1 className="checkout-header">{`Shopping Cart (${cartLength})`}</h1>
+            {cartLength === 0 ? <h1 className="checkout-header2">Your Shopping is Empty!</h1> : null}
             <div className="checkout-wrapper">
                 <div>
                     {cartInfo}

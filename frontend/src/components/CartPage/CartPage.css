@@ -7,9 +7,19 @@
 .checkout-header {
     display: block;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     font-size: x-large;
     font-weight: 600;
+}
+
+.checkout-header2 {
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+    font-size: x-large;
+    font-weight: 600;
+    margin-bottom: 30px;
 }
 
 .total-div {
