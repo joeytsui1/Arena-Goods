@@ -69,7 +69,7 @@ const CartPage = () => {
                         </div>
                         
                     </div>
-                    <button onClick={handleCheckout} className="total-div-button">CHECKOUT</button>
+                    <button onClick={handleCheckout} disabled={cart.length === 0 ? true : false} className="total-div-button">CHECKOUT</button>
                 </div>
             </div>
 

@@ -50,6 +50,11 @@ body.modal-open {
 .total-div-button:hover{
     background-color: rgb(74, 72, 72);
 }
+
+.total-div-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
 .total-info {
     background-color: rgb(248, 248, 248);
     padding: 20px;
