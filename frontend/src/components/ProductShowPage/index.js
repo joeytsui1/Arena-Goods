@@ -54,6 +54,10 @@ const ProductShowPage = () => {
         dispatch(makeCart(cart_item));
     };
 
+    if(!product) {
+        return null
+    }
+
     const text = size ? `US Size ${size}` : "Select A Size"
     return (
         <>

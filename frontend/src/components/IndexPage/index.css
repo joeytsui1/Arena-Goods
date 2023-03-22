@@ -76,6 +76,7 @@ a:hover {
 .carousel-div {
     display: flex;
     justify-content: space-between;
+    margin-top: -10px;
 }
 
 .carousel-div > h1 {
