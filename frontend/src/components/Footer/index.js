@@ -19,7 +19,8 @@ const Footer = () => {
                 </div>
                 <div className="footer-refer">
                     <p className="footer-refer-p">Have any job offers for me? <br></br> Go to my Linkedin!</p>
-                    <button className="refer-button">Linkedin</button>
+                    {/* <button className="refer-button">Linkedin</button> */}
+                    <a className="refer-button" href="https://www.linkedin.com/in/joey-tsui-5836a2240/" target="_blank">Linkedin</a>
                 </div>
             </footer>
             <footer >

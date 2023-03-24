@@ -13,16 +13,20 @@ import "./CartPage.css"
 const CartPage = () => {
     const dispatch = useDispatch()
     const history = useHistory()
+    const [isLoading, setIsLoading] = useState(true);
     const currentUser = useSelector(state => state.session ? state.session.user : null)
-    const cart = useSelector(state => state.cart ? Object.values(state.cart) : [])
+    const cart = useSelector(state => state.cart ? Object.values(state.cart) : null)
     const products = useSelector(state => state.products ? Object.values(state.products) : [])
     const randomizeProducts = products ? products.sort(() => Math.random() - 0.5).slice(0, 10) : []
-
-
     const total = cart.reduce((acc, product) => acc += (product.price * product.quantity), 0).toLocaleString()
-
+    
     useEffect(() => {
-        dispatch(fetchUserCart(currentUser.id))
+        dispatch(fetchUserCart(currentUser.id)).then(() => {
+            const timeoutId = setTimeout(() => {
+                setIsLoading(false)
+            }, 2000) // wait for 3 seconds
+            return () => clearTimeout(timeoutId) // cleanup function to clear the timeout when the component unmounts or when the effect runs again
+        })
         dispatch(getProducts(""))
         dispatch(fetchUserFavorite(currentUser.id))
     }, [])
@@ -46,6 +50,8 @@ const CartPage = () => {
     
     return !currentUser ? <Redirect to='/login'/> : (
         <>
+            {isLoading ? <div className="loader"></div>: 
+            <>
             <h1 className="checkout-header">{`Shopping Cart (${cartLength})`}</h1>
             {cartLength === 0 ? <h1 className="checkout-header2">Your Shopping is Empty!</h1> : null}
             <div className="checkout-wrapper">
@@ -77,8 +83,9 @@ const CartPage = () => {
                 <p>You May Also Like</p>
                 <AllProductCarousel randomizeProducts={randomizeProducts} />
             </div>
-
         </>
+     }
+     </>
     )
 }
 export default CartPage

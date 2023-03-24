@@ -7,6 +7,8 @@ import Carousel from "../Carousel/AllProductCarousel"
 import AdidasCarousel from "../Carousel/AdidasCarousel"
 import JordanCarousel from "../Carousel/JordanCarousel"
 import NikeCarousel from "../Carousel/NikeCarousel"
+import { fetchUserFavorite } from "../../store/favorite"
+import { fetchUserCart } from "../../store/cart"
 
 
 
@@ -14,10 +16,12 @@ const IndexPage = () => {
     const history = useHistory()
     const dispatch = useDispatch()
     const products = useSelector(state => state.products ? Object.values(state.products) : [])
-
+    const currentUser = useSelector(state => state.session ? state.session.user : null)
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(getProducts(""))
+        dispatch(fetchUserFavorite(currentUser.id))
+        dispatch(fetchUserCart(currentUser.id))
     }, [])
 
     const handleClick = (e) => {
