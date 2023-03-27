@@ -10,6 +10,7 @@ import { fetchUserFavorite } from "../../store/favorite"
 import "./ProductShowPage.css"
 
 const ProductShowPage = () => {
+    const [loading, setIsLoading] = useState(true)
     const dispatch = useDispatch()
     const history = useHistory()
     const { productId } = useParams()
@@ -25,7 +26,12 @@ const ProductShowPage = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(getProduct(productId))
-        dispatch(getProducts(""))
+        dispatch(getProducts("")).then(() => {
+            const timeoutId = setTimeout(() => {
+                setIsLoading(false)
+            }, 2000) // wait for 3 seconds
+            return () => clearTimeout(timeoutId) // cleanup function to clear the timeout when the component unmounts or when the effect runs again
+        })
         currentUser ? dispatch(fetchUserFavorite(currentUser.id)) : dispatch(() => 1)
         currentUser ? dispatch(fetchUserCart(currentUser.id)) : dispatch(() => 1)
     }, [dispatch, productId, size, cart.length])
@@ -60,6 +66,8 @@ const ProductShowPage = () => {
 
     const text = size ? `US Size ${size}` : "Select A Size"
     return (
+        <>
+        {loading ? <div className="loader"></div>: 
         <>
         <div className="product-wrapper">
             <div className="product-div">
@@ -133,6 +141,8 @@ const ProductShowPage = () => {
             <p>You May Also Like</p>
             <AllProductCarousel randomizeProducts={randomizeProducts}/>
         </div>
+        </>
+        }
         </>
     )
 }

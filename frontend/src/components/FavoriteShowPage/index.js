@@ -7,9 +7,11 @@ import "./FavoriteShowPage.css"
 import { Redirect } from "react-router-dom"
 import { getProducts } from "../../store/product"
 import AllProductCarousel from "../Carousel/AllProductCarousel"
+import { useState } from "react"
 
 const FavoriteShowPage = () => {
     const dispatch = useDispatch()
+    const [loading, setIsLoading] = useState(true)
     const currentUser = useSelector(state => state.session ? state.session.user : null)
     const favorites = useSelector(state => state.favorites ? Object.values(state.favorites) : [])
     const length = favorites.length
@@ -19,12 +21,19 @@ const FavoriteShowPage = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(fetchUserFavorite(currentUser.id))
-        dispatch(getProducts(""))
+        dispatch(getProducts("")).then(() => {
+            const timeoutId = setTimeout(() => {
+                setIsLoading(false)
+            }, 2000) // wait for 3 seconds
+            return () => clearTimeout(timeoutId) // cleanup function to clear the timeout when the component unmounts or when the effect runs again
+        })
     }, [length])
 
     const ProductDiv = favorites.map(product => <ProductIndexItem key={product.productId} product={product} />)
     
     return !currentUser ? <Redirect to="/login"/> : (
+        <>
+        {loading ? <div className="loader"></div>: 
         <>
             <div className="favorites-header">
                 <h1>{`Favorites (${length})`}</h1>
@@ -38,6 +47,8 @@ const FavoriteShowPage = () => {
                 <p>You May Also Like</p>
                 <AllProductCarousel randomizeProducts={randomizeProducts} />
             </div>
+        </>
+            }
         </>
     )
 }

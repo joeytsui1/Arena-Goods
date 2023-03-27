@@ -5,8 +5,10 @@ import { getProducts } from "../../store/product"
 import ProductIndexItem from "../ProductIndexItem"
 import { fetchUserFavorite } from "../../store/favorite"
 import "./BrandShowPage.css"
+import { useState } from "react"
 
 const BrandShowPage = () => {
+    const [loading, setIsLoading] = useState(true)
     const dispatch = useDispatch()
     const products = useSelector(state => state.products ? Object.values(state.products) : [])
     const currentUser = useSelector(state => state.session ? state.session.user : null)
@@ -14,7 +16,12 @@ const BrandShowPage = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        dispatch(getProducts(""))
+        dispatch(getProducts("")).then(() => {
+                const timeoutId = setTimeout(() => {
+                setIsLoading(false)
+            }, 2000) // wait for 3 seconds
+            return () => clearTimeout(timeoutId) // cleanup function to clear the timeout when the component unmounts or when the effect runs again
+        })
         currentUser ? dispatch(fetchUserFavorite(currentUser.id)) : dispatch(() => 1)
     }, [])
 
@@ -55,6 +62,8 @@ const BrandShowPage = () => {
 
     return (
         <>
+        {loading  ? <div className="loader"></div>:
+        <>
             <div className="brand-div">
                 <div className="brand-inner-div">
                     <p>Shop</p>
@@ -67,6 +76,8 @@ const BrandShowPage = () => {
             <div className="index-product-div">
                 {productDiv}
             </div>
+        </>
+        }
         </>
     )
 }

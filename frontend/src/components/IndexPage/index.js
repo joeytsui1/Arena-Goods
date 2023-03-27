@@ -36,6 +36,8 @@ const IndexPage = () => {
     const nikes = nike ? nike.slice(0, 10) : []
     const adidas = products.filter(product => product.brand.toLowerCase().includes("adidas"))
     const adidas2 = adidas ? adidas.slice(0, 10) : []
+
+    
     return (
         <>
             <div className="home-div">
@@ -79,7 +81,6 @@ const IndexPage = () => {
                 <AdidasCarousel adidas2={adidas2} />
             </div>
         </>
-
     )
 }
 

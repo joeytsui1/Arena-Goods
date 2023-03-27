@@ -3,19 +3,26 @@ import { useEffect } from "react"
 import { getProducts } from "../../store/product"
 import ProductIndexItem from "../ProductIndexItem"
 import "./ProductIndex.css"
+import { useState } from "react"
 
 const ProductIndex = () => {
+    const [loading, setIsLoading] = useState(true)
     const dispatch = useDispatch() 
     const products = useSelector(state => state.products ? Object.values(state.products) : [])
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        dispatch(getProducts(""))
+        dispatch(getProducts("")).then(() => {
+            const timeoutId = setTimeout(() => {
+                setIsLoading(false)
+            }, 2000)})
     }, [])
 
     const productDiv = products.map(product => <ProductIndexItem key={product.id} product={product}/>)
     const result = productDiv.length
     return (
+        <>
+        {loading  ? <div className="loader"></div>: 
         <>
             <div className="brand-div">
                 <div className="brand-inner-div">
@@ -28,7 +35,8 @@ const ProductIndex = () => {
             <div className="index-product-div">
                 {productDiv}
             </div>
-            
+        </>
+        }
         </>
     )
 }
