@@ -20,8 +20,8 @@ const IndexPage = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(getProducts(""))
-        dispatch(fetchUserFavorite(currentUser.id))
-        dispatch(fetchUserCart(currentUser.id))
+        dispatch(fetchUserFavorite(currentUser?.id))
+        dispatch(fetchUserCart(currentUser?.id))
     }, [])
 
     const handleClick = (e) => {

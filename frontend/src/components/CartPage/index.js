@@ -45,6 +45,8 @@ const CartPage = () => {
         }
     };
 
+
+
     const cartInfo = cart.map((product,i) => <CartPageItem key={i} product={product}/>)
     const cartLength = cart.length
     
