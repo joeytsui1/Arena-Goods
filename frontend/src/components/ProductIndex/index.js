@@ -15,7 +15,7 @@ const ProductIndex = () => {
         dispatch(getProducts("")).then(() => {
             const timeoutId = setTimeout(() => {
                 setIsLoading(false)
-            }, 2000)})
+            }, 500)})
     }, [])
 
     const productDiv = products.map(product => <ProductIndexItem key={product.id} product={product}/>)

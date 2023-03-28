@@ -24,7 +24,7 @@ const FavoriteShowPage = () => {
         dispatch(getProducts("")).then(() => {
             const timeoutId = setTimeout(() => {
                 setIsLoading(false)
-            }, 2000) // wait for 3 seconds
+            }, 500) // wait for 3 seconds
             return () => clearTimeout(timeoutId) // cleanup function to clear the timeout when the component unmounts or when the effect runs again
         })
     }, [length])
