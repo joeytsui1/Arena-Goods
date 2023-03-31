@@ -4,6 +4,8 @@
 
 Arena Goods is a fullstack web application clone of Stadium Goods. This web applications allows users to browse the listings of products and also being able to purchase the product.
 
+![image](https://user-images.githubusercontent.com/109801026/229180461-417c318d-57e8-4747-92b6-76b79765e021.png)
+
 ## Features
 * User Authorization - Users are able to sign up or login an account, shows error handling when user submits an invalid input. Users can also login as a Demo User to test out the site.
 * Cart - Users can add products to cart and inside the cart the user can either updates the sizes or quantities of the shoes they have selected, which will also dynamically change the total.
