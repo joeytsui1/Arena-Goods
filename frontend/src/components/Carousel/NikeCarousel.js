@@ -10,7 +10,7 @@ const NikeCarousel = ({nikes}) => {
     return (
 
         <Swiper
-            style={{ width: "100%", height: "100%", zIndex: "0" }}
+            style={{ width: "100%", height: "100%", zIndex: "0", '--swiper-navigation-color': 'black' }}
             modules={[Navigation, A11y]}
             spaceBetween={0}
             slidesPerView={5}
