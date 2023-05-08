@@ -23,27 +23,27 @@ const BrandShowPage = () => {
             return () => clearTimeout(timeoutId) // cleanup function to clear the timeout when the component unmounts or when the effect runs again
         })
         currentUser ? dispatch(fetchUserFavorite(currentUser.id)) : dispatch(() => 1)
-    }, [])
+    }, [currentUser, dispatch])
 
     let image
     let brandInfo   
     let capitalizedBrand = brand[0].toUpperCase() + brand.slice(1).toLowerCase()
 
     if(brand === "jordan") {
-        image = (<img className="brand-info-img" src="https://www.stadiumgoods.com/BWStaticContent/54000/7f295212-51a9-4db2-8ca0-38b1fe53bb2f_sg-plpheader-2000x680-jordan.jpg"/>)
+        image = (<img className="brand-info-img" src="https://www.stadiumgoods.com/BWStaticContent/54000/7f295212-51a9-4db2-8ca0-38b1fe53bb2f_sg-plpheader-2000x680-jordan.jpg" alt=""/>)
         brandInfo = (<p className="brand-info-p">Take flight. As soon as the Air Jordan line debuted in 1985, it started shaping sneaker culture as we know it today. Find all the legendary models including the Air Jordan 1, Air Jordan 3, Air Jordan 6, and Air Jordan 11 here.</p>)
     } else if (brand === "adidas") {
-        image = (<img className="brand-info-img" src="https://www.stadiumgoods.com/BWStaticContent/54000/ad45a6cf-38df-4685-a3f4-3eceb20f4173_sg-plpheader-2000x680-adidas.jpg" />)
+        image = (<img className="brand-info-img" src="https://www.stadiumgoods.com/BWStaticContent/54000/ad45a6cf-38df-4685-a3f4-3eceb20f4173_sg-plpheader-2000x680-adidas.jpg" alt=""/>)
         brandInfo = (<p className="brand-info-p">The "Brand with the 3 Stripes" is a legend, birthing classics from the Stan Smith to the Superstar before reinventing itself with NMD, Ultra Boost, and its Yeezy collection.</p>)
     } else if (brand === "new-balance") {
-        image = (<img className="brand-info-img" src="https://www.stadiumgoods.com/BWStaticContent/54000/f972c813-66f8-4507-939c-e8209e475d7a_sg-plpheader-2000x680-newbalance.jpg" />)
+        image = (<img className="brand-info-img" src="https://www.stadiumgoods.com/BWStaticContent/54000/f972c813-66f8-4507-939c-e8209e475d7a_sg-plpheader-2000x680-newbalance.jpg" alt=""/>)
         brandInfo = (<p className="brand-info-p">Known for premium quality and ultimate comfort, New Balance is one of the world’s premier athletic footwear brands. Find a full range of the New England-based brand’s retro runners, modern hits, and coveted collaborations here.</p>)
         capitalizedBrand = "New Balance"
     } else if (brand === "asics") {
-        image = (<img className="brand-info-img" src="https://www.stadiumgoods.com/BWStaticContent/54000/4cbb8441-16d7-4695-8576-44539578eaf1_sg-plpheader-2000x680-asics.jpg" />)
+        image = (<img className="brand-info-img" src="https://www.stadiumgoods.com/BWStaticContent/54000/4cbb8441-16d7-4695-8576-44539578eaf1_sg-plpheader-2000x680-asics.jpg" alt=""/>)
         brandInfo = (<p className="brand-info-p">Retro classics like the Gel-Lyte III and much more.</p>)
     } else if (brand === "nike") {
-        image = (<img className="brand-info-img" src="https://www.stadiumgoods.com/BWStaticContent/54000/5de05508-447b-4ad2-b1ec-f69e7458c74f_221028-giftguide2022-dunks-2-m-desktop.jpg" />)
+        image = (<img className="brand-info-img" src="https://www.stadiumgoods.com/BWStaticContent/54000/5de05508-447b-4ad2-b1ec-f69e7458c74f_221028-giftguide2022-dunks-2-m-desktop.jpg" alt=""/>)
         brandInfo = (<p className="brand-info-p">Take flight. As soon as the Air Jordan line debuted in 1985, it started shaping sneaker culture as we know it today. Find all the legendary models including the Air Jordan 1, Air Jordan 3, Air Jordan 6, and Air Jordan 11 here.</p>)
     } else {
         return (<Redirect to="/*" />)
@@ -53,12 +53,6 @@ const BrandShowPage = () => {
     const productDiv = filtered.map(product => <ProductIndexItem key={product.id} product={product} />)
 
     const result = productDiv.length
-
-    if (products === undefined) {
-        return (
-            <>still loading...</>
-        )
-    }
 
     return (
         <>
